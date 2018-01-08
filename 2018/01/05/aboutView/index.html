@@ -82,19 +82,19 @@
 <meta name="description" content="图形界面 Tip :  主要使用语言Swift        —————    图形绘制是怎么回事   界面是怎么展示出来的 界面效果，即你媳妇儿看到手机屏幕上的一些文字，列表，以及图片等等。   能呈现出来的物理原理是： CRT 电子枪(手机硬件相关的)从手机屏幕由上到下一行行扫描，扫描完成后得到一帧画面，显示器就会这一帧画面一帧一帧的连续起来(正常不丢帧的情况下是每秒60帧)，就是我们看到的手">
 <meta property="og:type" content="article">
 <meta property="og:title" content="图形界面相关">
-<meta property="og:url" content="http://yoursite.com/2018/01/05/图形界面相关/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/01/05/aboutView/index.html">
 <meta property="og:site_name" content="Hello World">
 <meta property="og:description" content="图形界面 Tip :  主要使用语言Swift        —————    图形绘制是怎么回事   界面是怎么展示出来的 界面效果，即你媳妇儿看到手机屏幕上的一些文字，列表，以及图片等等。   能呈现出来的物理原理是： CRT 电子枪(手机硬件相关的)从手机屏幕由上到下一行行扫描，扫描完成后得到一帧画面，显示器就会这一帧画面一帧一帧的连续起来(正常不丢帧的情况下是每秒60帧)，就是我们看到的手">
 <meta property="og:locale" content="za-Hans">
-<meta property="og:image" content="http://yoursite.com/Users/vampire/Desktop/屏幕快照%202018-01-05%20下午2.58.22.png">
-<meta property="og:image" content="http://yoursite.com/Users/vampire/Desktop/屏幕快照%202018-01-05%20下午3.12.13.png">
-<meta property="og:image" content="http://yoursite.com/Users/vampire/Desktop/屏幕快照%202018-01-05%20下午2.47.38.png">
-<meta property="og:image" content="http://yoursite.com/Users/vampire/Desktop/2039514-e5e0307a15caa3ff.jpeg">
-<meta property="og:updated_time" content="2018-01-05T08:59:00.000Z">
+<meta property="og:image" content="http://yoursite.com/2018/01/05/aboutView/3.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/01/05/aboutView/4.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/01/05/aboutView/2.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/01/05/aboutView/1.jpg">
+<meta property="og:updated_time" content="2018-01-05T10:50:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图形界面相关">
 <meta name="twitter:description" content="图形界面 Tip :  主要使用语言Swift        —————    图形绘制是怎么回事   界面是怎么展示出来的 界面效果，即你媳妇儿看到手机屏幕上的一些文字，列表，以及图片等等。   能呈现出来的物理原理是： CRT 电子枪(手机硬件相关的)从手机屏幕由上到下一行行扫描，扫描完成后得到一帧画面，显示器就会这一帧画面一帧一帧的连续起来(正常不丢帧的情况下是每秒60帧)，就是我们看到的手">
-<meta name="twitter:image" content="http://yoursite.com/Users/vampire/Desktop/屏幕快照%202018-01-05%20下午2.58.22.png">
+<meta name="twitter:image" content="http://yoursite.com/2018/01/05/aboutView/3.jpg">
 
 
 
@@ -124,7 +124,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/01/05/图形界面相关/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/01/05/aboutView/"/>
 
 
 
@@ -237,7 +237,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/05/图形界面相关/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/05/aboutView/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Vampire_时代">
@@ -326,12 +326,10 @@
 <p>本篇文章要讲述些什么</p>
 </blockquote>
 <ul>
-<li><p>UIView 展示出来的底层运作</p>
-</li>
-<li><p>Quartz2D相关 介绍</p>
-<p>​</p>
-</li>
+<li>UIView 展示出来的底层运作</li>
+<li>Quartz2D相关 介绍</li>
 </ul>
+<a id="more"></a>
 <blockquote>
 <p>UIView 展示出来的底层运作</p>
 </blockquote>
@@ -341,12 +339,11 @@
 <p>那么可以通过draw相关的方法得到</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">override</span> <span class="keyword">init</span>(frame: <span class="type">CGRect</span>) &#123;</span><br><span class="line">     <span class="keyword">super</span>.<span class="keyword">init</span>(frame: frame)</span><br><span class="line">     <span class="built_in">print</span>(#function)</span><br><span class="line">     <span class="keyword">self</span>.backgroundColor = <span class="type">UIColor</span>.brown</span><br><span class="line"> &#125;   </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">draw</span><span class="params">(<span class="number">_</span> rect: CGRect)</span></span> &#123;</span><br><span class="line">     <span class="built_in">print</span>(#function)</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">drawHierarchy</span><span class="params">(<span class="keyword">in</span> rect: CGRect, afterScreenUpdates afterUpdates: Bool)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">     <span class="built_in">print</span>(#function)</span><br><span class="line">     <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">draw</span><span class="params">(<span class="number">_</span> rect: CGRect, <span class="keyword">for</span> formatter: UIViewPrintFormatter)</span></span> &#123;</span><br><span class="line">     <span class="built_in">print</span>(#function)</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">draw</span><span class="params">(<span class="number">_</span> layer: CALayer, <span class="keyword">in</span> ctx: CGContext)</span></span> &#123;</span><br><span class="line">     <span class="built_in">print</span>(#function)</span><br><span class="line"> &#125;</span><br><span class="line"><span class="comment">//以及ViewController中的ViewwillAppear,ViewDidApper</span></span><br></pre></td></tr></table></figure>
 <p>调用结果为：</p>
-<p><img src="/Users/vampire/Desktop/屏幕快照 2018-01-05 下午2.58.22.png" alt="屏幕快照 2018-01-05 下午2.58.22"></p>
-<p>会发现只自动调用了<code>override func draw(_ layer: CALayer, in ctx: CGContext)</code>方法,而我们通常会在<code>override func draw(_ rect: CGRect)</code>中绘制的一些基本图形(也是自动调用的)（这个就不要问我为什么啦🌶）,但是实现了<code>override func draw(_ layer: CALayer, in ctx: CGContext)</code>就会影响<code>override func draw(_ rect: CGRect)</code>的调用. <code>override func draw(_ layer: CALayer, in ctx: CGContext)</code>的描述这样色的</p>
+<img src="/2018/01/05/aboutView/3.jpg">
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/* If defined, called by the default implementation of -drawInContext: */</span><br><span class="line">如果定义,称为-drawInContext默认实现的:</span><br></pre></td></tr></table></figure>
 <p>好吧,我还是解释一下 ”而我们通常会在<code>override func draw(_ rect: CGRect)</code>中绘制的一些基本图形(也是自动调用的)“这个是怎么一回事。</p>
 <p>官方文档给的是：</p>
-<p><img src="/Users/vampire/Desktop/屏幕快照 2018-01-05 下午3.12.13.png" alt="屏幕快照 2018-01-05 下午3.12.13"></p>
+<img src="/2018/01/05/aboutView/4.jpg">
 <p>翻译为:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">视图绘制需要的基础上发生。视图是第一次显示时,或者当全部或部分变得可见由于布局变化,系统询问该视图画它的内容。视图包含使用UIKit定制内容或核心图形、系统调用视图的draw(_:)方法。该方法的实现负责绘制视图的内容到当前图形上下文,这是系统设置的自动调用该方法之前。这将创建一个静态视图的可视化表示的内容可以显示在屏幕上。</span><br></pre></td></tr></table></figure>
 <p>其实我是没找到为什么会覆盖<code>func draw(_ rect: CGRect)</code>,搜索了一番:<a href="http://blog.csdn.net/tongwang123456/article/details/17881291" target="_blank" rel="noopener">原文</a>.</p>
@@ -354,14 +351,14 @@
 <p>言归正传,那么先观察一下接下来需要的<code>override func draw(_ rect: CGRect)</code>的方法调用顺序</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">override</span> <span class="keyword">init</span>(frame: <span class="type">CGRect</span>) &#123;</span><br><span class="line">     <span class="keyword">super</span>.<span class="keyword">init</span>(frame: frame)</span><br><span class="line">     <span class="built_in">print</span>(#function)</span><br><span class="line">     <span class="keyword">self</span>.backgroundColor = <span class="type">UIColor</span>.brown</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">draw</span><span class="params">(<span class="number">_</span> rect: CGRect)</span></span> &#123;</span><br><span class="line">     <span class="built_in">print</span>(#function)</span><br><span class="line"> &#125;</span><br><span class="line"><span class="comment">//以及ViewController中的ViewwillAppear,ViewDidApper</span></span><br></pre></td></tr></table></figure>
 <p>结果是：</p>
-<p><img src="/Users/vampire/Desktop/屏幕快照 2018-01-05 下午2.47.38.png" alt="屏幕快照 2018-01-05 下午2.47.38"></p>
+<img src="/2018/01/05/aboutView/2.jpg">
 <p><code>override func draw(_ rect: CGRect)</code>也是如上面说的自己调用的,然后我们接下来需要绘制的一些基本图形就将会在这方法里调用实现</p>
 <blockquote>
 <p>Next Step</p>
 </blockquote>
 <p>还是没有说怎么展示的，好伐好伐</p>
 <p><strong>下图就是从CPU到GPU的过程</strong></p>
-<p><img src="/Users/vampire/Desktop/2039514-e5e0307a15caa3ff.jpeg" alt="2039514-e5e0307a15caa3ff"></p>
+<img src="/2018/01/05/aboutView/1.jpg">
 <p>kuminasa，剩下的我也不怎么会,起飞链接<a href="https://www.jianshu.com/p/77d0cb17cfad" target="_blank" rel="noopener">iOS图形渲染分析</a>.</p>
 <h3 id="接下来-Quartz2D之前-需要先了解一些相关的知识储备"><a href="#接下来-Quartz2D之前-需要先了解一些相关的知识储备" class="headerlink" title="接下来 Quartz2D之前 需要先了解一些相关的知识储备"></a>接下来 Quartz2D之前 需要先了解一些相关的知识储备</h3><ul>
 <li><p>Quartz2D</p>
