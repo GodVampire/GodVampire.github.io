@@ -79,21 +79,21 @@
 
 
 
-<meta name="description" content="图形界面Tip :  主要使用语言Swift        本篇文章要讲述些什么   UIView 展示出来的底层运作 Quartz2D相关 介绍">
+<meta name="description" content="Tip :  主要使用语言Swift        本篇文章要讲述些什么   UIView 展示出来的底层运作 Quartz2D相关 介绍">
 <meta property="og:type" content="article">
 <meta property="og:title" content="图形界面相关">
 <meta property="og:url" content="http://yoursite.com/2018/01/05/aboutView/index.html">
 <meta property="og:site_name" content="Hello World">
-<meta property="og:description" content="图形界面Tip :  主要使用语言Swift        本篇文章要讲述些什么   UIView 展示出来的底层运作 Quartz2D相关 介绍">
+<meta property="og:description" content="Tip :  主要使用语言Swift        本篇文章要讲述些什么   UIView 展示出来的底层运作 Quartz2D相关 介绍">
 <meta property="og:locale" content="za-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/01/05/aboutView/3.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/01/05/aboutView/4.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/01/05/aboutView/2.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/01/05/aboutView/1.jpg">
-<meta property="og:updated_time" content="2018-01-08T10:17:26.000Z">
+<meta property="og:updated_time" content="2018-01-08T10:22:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图形界面相关">
-<meta name="twitter:description" content="图形界面Tip :  主要使用语言Swift        本篇文章要讲述些什么   UIView 展示出来的底层运作 Quartz2D相关 介绍">
+<meta name="twitter:description" content="Tip :  主要使用语言Swift        本篇文章要讲述些什么   UIView 展示出来的底层运作 Quartz2D相关 介绍">
 <meta name="twitter:image" content="http://yoursite.com/2018/01/05/aboutView/3.jpg">
 
 
@@ -304,7 +304,7 @@
       
 
       
-        <h2 id="图形界面"><a href="#图形界面" class="headerlink" title="图形界面"></a>图形界面</h2><p>Tip :  主要使用语言<code>Swift</code>      </p>
+        <p>Tip :  主要使用语言<code>Swift</code>      </p>
 <blockquote>
 <p>本篇文章要讲述些什么</p>
 </blockquote>
@@ -353,7 +353,8 @@
 <p><strong>下图就是从CPU到GPU的过程</strong></p>
 <img src="/2018/01/05/aboutView/1.jpg">
 <p>kuminasa，剩下的我也不怎么会,起飞链接<a href="https://www.jianshu.com/p/77d0cb17cfad" target="_blank" rel="noopener">iOS图形渲染分析</a>.</p>
-<h3 id="接下来-Quartz2D之前-需要先了解一些相关的知识储备"><a href="#接下来-Quartz2D之前-需要先了解一些相关的知识储备" class="headerlink" title="接下来 Quartz2D之前 需要先了解一些相关的知识储备"></a>接下来 Quartz2D之前 需要先了解一些相关的知识储备</h3><blockquote>
+<h3 id="Quartz2D"><a href="#Quartz2D" class="headerlink" title="Quartz2D"></a>Quartz2D</h3><p>那么 接触Quartz2D之前  需要先了解一些相关的知识储备</p>
+<blockquote>
 <p>Quartz2D 介绍</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Q: 什么是Quartz2D</span><br><span class="line">A: 是一个二维的绘图引擎,同时支持iOS和Mac系统</span><br><span class="line"></span><br><span class="line">Q: Quartz2D的常见使用方式</span><br><span class="line">A: 画基本线条,绘制文字,图片,截图,自定义UIView等</span><br><span class="line"></span><br><span class="line">Q: Quartz2D在开发中的价值</span><br><span class="line">A: 当我们的控件样式极其复杂时,可以把控件内部的结构给画出画,就是自定义控件.</span><br></pre></td></tr></table></figure>
@@ -372,7 +373,7 @@
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">首先得要有上下文,有了上下文才能决定把绘制的东西显示到哪个地方去.</span><br><span class="line">其次就是这个上下文必须得和View相关联.才能将内容绘制到View上面.</span><br><span class="line">	</span><br><span class="line">步骤:</span><br><span class="line">1.要先自定定UIView</span><br><span class="line">2.实现DrawRect方法</span><br><span class="line">3.在DrawRect方法中取得跟View相关联的上下文.</span><br><span class="line">4.绘制路径(描述路径长什么样).</span><br><span class="line">5.把描述好的路径保存到上下文(即:添加路径到上下文)</span><br><span class="line">6.把上下文的内容渲染到View</span><br></pre></td></tr></table></figure>
 <p>​      哦,我亲爱的土拔鼠,你再说些神马？ 对不起我是谁,我在哪，其实我只是为了凑够2000字…</p>
-<h3 id=""><a href="#" class="headerlink" title=" "></a> </h3><h3 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h3><blockquote>
+<h3 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h3><blockquote>
 <p>总结</p>
 </blockquote>
 <p>开篇的就讲这么多吧,主要是View展示的时候的代码底层调用,以及Quartz2D相关的介绍</p>
@@ -532,7 +533,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#图形界面"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x56FE;&#x5F62;&#x754C;&#x9762;" class="headerlink" title="&#x56FE;&#x5F62;&#x754C;&#x9762;"></a>&#x56FE;&#x5F62;&#x754C;&#x9762;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#图形绘制是怎么回事"><span class="nav-number">1.1.</span> <span class="nav-text"><a href="#&#x56FE;&#x5F62;&#x7ED8;&#x5236;&#x662F;&#x600E;&#x4E48;&#x56DE;&#x4E8B;" class="headerlink" title="&#x56FE;&#x5F62;&#x7ED8;&#x5236;&#x662F;&#x600E;&#x4E48;&#x56DE;&#x4E8B;"></a>&#x56FE;&#x5F62;&#x7ED8;&#x5236;&#x662F;&#x600E;&#x4E48;&#x56DE;&#x4E8B;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接下来-Quartz2D之前-需要先了解一些相关的知识储备"><span class="nav-number">1.2.</span> <span class="nav-text"><a href="#&#x63A5;&#x4E0B;&#x6765;-Quartz2D&#x4E4B;&#x524D;-&#x9700;&#x8981;&#x5148;&#x4E86;&#x89E3;&#x4E00;&#x4E9B;&#x76F8;&#x5173;&#x7684;&#x77E5;&#x8BC6;&#x50A8;&#x5907;" class="headerlink" title="&#x63A5;&#x4E0B;&#x6765; Quartz2D&#x4E4B;&#x524D; &#x9700;&#x8981;&#x5148;&#x4E86;&#x89E3;&#x4E00;&#x4E9B;&#x76F8;&#x5173;&#x7684;&#x77E5;&#x8BC6;&#x50A8;&#x5907;"></a>&#x63A5;&#x4E0B;&#x6765; Quartz2D&#x4E4B;&#x524D; &#x9700;&#x8981;&#x5148;&#x4E86;&#x89E3;&#x4E00;&#x4E9B;&#x76F8;&#x5173;&#x7684;&#x77E5;&#x8BC6;&#x50A8;&#x5907;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#"><span class="nav-number">1.3.</span> <span class="nav-text"><a href="#" class="headerlink" title=" "></a> </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结尾"><span class="nav-number">1.4.</span> <span class="nav-text"><a href="#&#x7ED3;&#x5C3E;" class="headerlink" title="&#x7ED3;&#x5C3E;"></a>&#x7ED3;&#x5C3E;</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#图形绘制是怎么回事"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x56FE;&#x5F62;&#x7ED8;&#x5236;&#x662F;&#x600E;&#x4E48;&#x56DE;&#x4E8B;" class="headerlink" title="&#x56FE;&#x5F62;&#x7ED8;&#x5236;&#x662F;&#x600E;&#x4E48;&#x56DE;&#x4E8B;"></a>&#x56FE;&#x5F62;&#x7ED8;&#x5236;&#x662F;&#x600E;&#x4E48;&#x56DE;&#x4E8B;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Quartz2D"><span class="nav-number">2.</span> <span class="nav-text"><a href="#Quartz2D" class="headerlink" title="Quartz2D"></a>Quartz2D</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结尾"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x7ED3;&#x5C3E;" class="headerlink" title="&#x7ED3;&#x5C3E;"></a>&#x7ED3;&#x5C3E;</span></a></li></ol></div>
             
 
           </div>
