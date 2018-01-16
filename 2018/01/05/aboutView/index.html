@@ -79,21 +79,21 @@
 
 
 
-<meta name="description" content="Tip :  主要使用语言Swift        本篇文章要讲述些什么   UIView 展示出来的底层运作 Quartz2D相关 介绍">
+<meta name="description" content="Tip :  主要使用语言Swift       Quartz2D 概述  核心动画  本篇文章要讲述些什么   UIView 展示出来的底层运作">
 <meta property="og:type" content="article">
 <meta property="og:title" content="图形界面相关">
 <meta property="og:url" content="http://yoursite.com/2018/01/05/aboutView/index.html">
 <meta property="og:site_name" content="Hello World">
-<meta property="og:description" content="Tip :  主要使用语言Swift        本篇文章要讲述些什么   UIView 展示出来的底层运作 Quartz2D相关 介绍">
+<meta property="og:description" content="Tip :  主要使用语言Swift       Quartz2D 概述  核心动画  本篇文章要讲述些什么   UIView 展示出来的底层运作">
 <meta property="og:locale" content="za-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/01/05/aboutView/3.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/01/05/aboutView/4.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/01/05/aboutView/2.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/01/05/aboutView/1.jpg">
-<meta property="og:updated_time" content="2018-01-08T10:22:07.000Z">
+<meta property="og:updated_time" content="2018-01-16T03:31:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图形界面相关">
-<meta name="twitter:description" content="Tip :  主要使用语言Swift        本篇文章要讲述些什么   UIView 展示出来的底层运作 Quartz2D相关 介绍">
+<meta name="twitter:description" content="Tip :  主要使用语言Swift       Quartz2D 概述  核心动画  本篇文章要讲述些什么   UIView 展示出来的底层运作">
 <meta name="twitter:image" content="http://yoursite.com/2018/01/05/aboutView/3.jpg">
 
 
@@ -190,7 +190,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Accueil
           </a>
         </li>
       
@@ -264,7 +264,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Posté le</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-05T16:35:03+08:00">
                 2018-01-05
@@ -305,12 +305,12 @@
 
       
         <p>Tip :  主要使用语言<code>Swift</code>      </p>
+<p><a href="">Quartz2D 概述</a>  <a href="">核心动画</a></p>
 <blockquote>
 <p>本篇文章要讲述些什么</p>
 </blockquote>
 <ul>
 <li>UIView 展示出来的底层运作</li>
-<li>Quartz2D相关 介绍</li>
 </ul>
 <a id="more"></a>
 <h3 id="图形绘制是怎么回事"><a href="#图形绘制是怎么回事" class="headerlink" title="图形绘制是怎么回事"></a>图形绘制是怎么回事</h3><blockquote>
@@ -326,7 +326,7 @@
 <blockquote>
 <p>UIView 展示出来的底层运作</p>
 </blockquote>
-<p>View 之所以能显示,是因为内部的Layer ,delegate Layer通过渲染内容来 生成跟View相关的上下文,并使View 中的内容呈现</p>
+<p>​    View 之所以能显示,是因为内部的Layer ,delegate Layer通过渲染内容来 生成跟View相关的上下文,并使View 中的内容呈现</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">open</span> <span class="keyword">var</span> layer: <span class="type">CALayer</span> &#123; <span class="keyword">get</span> &#125; <span class="comment">// returns view's layer. Will always return a non-nil value. view is layer's delegate</span></span><br></pre></td></tr></table></figure>
 <p>可以通过<code>UIView</code>的API发现一些与draw相关的内容</p>
 <p>那么可以通过draw相关的方法得到</p>
@@ -353,30 +353,10 @@
 <p><strong>下图就是从CPU到GPU的过程</strong></p>
 <img src="/2018/01/05/aboutView/1.jpg">
 <p>kuminasa，剩下的我也不怎么会,起飞链接<a href="https://www.jianshu.com/p/77d0cb17cfad" target="_blank" rel="noopener">iOS图形渲染分析</a>.</p>
-<h3 id="Quartz2D"><a href="#Quartz2D" class="headerlink" title="Quartz2D"></a>Quartz2D</h3><p>那么 接触Quartz2D之前  需要先了解一些相关的知识储备</p>
-<blockquote>
-<p>Quartz2D 介绍</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Q: 什么是Quartz2D</span><br><span class="line">A: 是一个二维的绘图引擎,同时支持iOS和Mac系统</span><br><span class="line"></span><br><span class="line">Q: Quartz2D的常见使用方式</span><br><span class="line">A: 画基本线条,绘制文字,图片,截图,自定义UIView等</span><br><span class="line"></span><br><span class="line">Q: Quartz2D在开发中的价值</span><br><span class="line">A: 当我们的控件样式极其复杂时,可以把控件内部的结构给画出画,就是自定义控件.</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>图形上下文介绍</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Q: 什么是图形上下文？</span><br><span class="line">A: 上下文是用来保存绘制的内容状态,并决定绘制到哪个地方的.</span><br><span class="line">   可以把绘制好的内容先保存到图形上下文,然后根据选择的图形上下文的方式不同,</span><br><span class="line">   绘制的内容显示到地方也不相同,即输出目标也不相同.</span><br><span class="line">Q: 图形上下文的类型有那些?</span><br><span class="line">A:  Bitmap Graphics Context(位图上下文)</span><br><span class="line">    PDF Graphics Context</span><br><span class="line">	Window Graphics Context </span><br><span class="line">	Layer Graphics Context(图层上下文,自定义UIView取得上下文就是图层上下文,</span><br><span class="line">	UIView之所以能够显示就是因为他内部有一个图层)</span><br><span class="line">	Printer Graphics Context(打印机)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>CALayer 介绍</p>
-</blockquote>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Q</span>: 什么是<span class="type">CALayer</span></span><br><span class="line"><span class="type">A</span>: 直接上<span class="type">UIView</span>中的属性说明 <span class="keyword">open</span> <span class="keyword">var</span> layer: <span class="type">CALayer</span> &#123; <span class="keyword">get</span> &#125;</span><br><span class="line"><span class="comment">// returns view's layer. Will always return a non-nil value. view is layer's delegate</span></span><br><span class="line"><span class="type">A</span>: 补充<span class="type">CALayer</span>继承自<span class="type">NSObject</span>,但是<span class="type">CALayer</span>不能响应任何用户事件,</span><br><span class="line">（<span class="type">UIView</span>中的响应事件都是<span class="type">UIResponder</span>处理的）可以认为<span class="type">UIView</span>注重于处理用户事件，而<span class="type">CALayer</span>则注重于显示效果。</span><br><span class="line"><span class="type">CALayer</span>是绘制内容的,不处理事件响应,与<span class="type">UIView</span>是相互依赖的,依赖于<span class="type">UIView</span>来显示绘制内容,</span><br><span class="line"><span class="type">UIView</span>依赖于<span class="type">CALayer</span>来提供内容。</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Q: Layer有位置大小吗？</span><br><span class="line">A: 每个UIView都包含一个CALayer在背后提供内容的绘制和显示</span><br><span class="line">   layer.bounds 来设定 WH</span><br><span class="line">   layer.position 来设置layer在父层 中的位置，以父层的左上角为原点，position为终点的位置  得到 一个矩形大小A</span><br><span class="line">   layer.anchorPoint( CGPoint 锚点  (0,0) -&gt; (1,1) )</span><br><span class="line">(默认值是(0.5,0.5)可能因为这个值影响正常显示) 根据bounds 和 坐标 得到一个 点 B(在layer中的) </span><br><span class="line">且 移动使 position 和 anchorPoint 重合 来 达到 确定一个新的frame 的目的, </span><br><span class="line">其实这个 有点绕,同过自定义一个Layer,多设个几个值,体验体验就明了了。</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Q: Layer内部是怎么实现的呢</span><br><span class="line">A: layer内部维护着三分layer tree，分别是</span><br><span class="line">presentLayer Tree(动画树)，</span><br><span class="line">modeLayer Tree(模型树),</span><br><span class="line">Render Tree(渲染树)，</span><br><span class="line">在做 iOS动画的时候，我们修改动画的属性，在动画的其实是Layer的presentLayer的属性值,</span><br><span class="line">而最终展示在界面上的其实是提供View的modelLayer。</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>怎么自定义View</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">首先得要有上下文,有了上下文才能决定把绘制的东西显示到哪个地方去.</span><br><span class="line">其次就是这个上下文必须得和View相关联.才能将内容绘制到View上面.</span><br><span class="line">	</span><br><span class="line">步骤:</span><br><span class="line">1.要先自定定UIView</span><br><span class="line">2.实现DrawRect方法</span><br><span class="line">3.在DrawRect方法中取得跟View相关联的上下文.</span><br><span class="line">4.绘制路径(描述路径长什么样).</span><br><span class="line">5.把描述好的路径保存到上下文(即:添加路径到上下文)</span><br><span class="line">6.把上下文的内容渲染到View</span><br></pre></td></tr></table></figure>
-<p>​      哦,我亲爱的土拔鼠,你再说些神马？ 对不起我是谁,我在哪，其实我只是为了凑够2000字…</p>
 <h3 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h3><blockquote>
 <p>总结</p>
 </blockquote>
-<p>开篇的就讲这么多吧,主要是View展示的时候的代码底层调用,以及Quartz2D相关的介绍</p>
+<p>开篇的就讲这么多吧,主要是View展示的时候的代码底层调用,图形渲染分析</p>
 <blockquote>
 <p>Next Step</p>
 </blockquote>
@@ -414,6 +394,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/15/what-in-iOS/" rel="prev" title="what in iOS">
+                what in iOS <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -467,10 +451,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
+            Table Des Matières
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
+            Ensemble
           </li>
         </ul>
       
@@ -494,8 +478,8 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
-                  <span class="site-state-item-name">posts</span>
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">articles</span>
                 </a>
               </div>
             
@@ -533,7 +517,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#图形绘制是怎么回事"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x56FE;&#x5F62;&#x7ED8;&#x5236;&#x662F;&#x600E;&#x4E48;&#x56DE;&#x4E8B;" class="headerlink" title="&#x56FE;&#x5F62;&#x7ED8;&#x5236;&#x662F;&#x600E;&#x4E48;&#x56DE;&#x4E8B;"></a>&#x56FE;&#x5F62;&#x7ED8;&#x5236;&#x662F;&#x600E;&#x4E48;&#x56DE;&#x4E8B;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Quartz2D"><span class="nav-number">2.</span> <span class="nav-text"><a href="#Quartz2D" class="headerlink" title="Quartz2D"></a>Quartz2D</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结尾"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x7ED3;&#x5C3E;" class="headerlink" title="&#x7ED3;&#x5C3E;"></a>&#x7ED3;&#x5C3E;</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#图形绘制是怎么回事"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x56FE;&#x5F62;&#x7ED8;&#x5236;&#x662F;&#x600E;&#x4E48;&#x56DE;&#x4E8B;" class="headerlink" title="&#x56FE;&#x5F62;&#x7ED8;&#x5236;&#x662F;&#x600E;&#x4E48;&#x56DE;&#x4E8B;"></a>&#x56FE;&#x5F62;&#x7ED8;&#x5236;&#x662F;&#x600E;&#x4E48;&#x56DE;&#x4E8B;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结尾"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x7ED3;&#x5C3E;" class="headerlink" title="&#x7ED3;&#x5C3E;"></a>&#x7ED3;&#x5C3E;</span></a></li></ol></div>
             
 
           </div>
@@ -571,7 +555,7 @@
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+  <div class="theme-info">Thème &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
 
 
 
