@@ -87,14 +87,14 @@
 <meta property="og:description" content="写在前面  ​    对于这些内容也是第一次整理，对很多知识也是一知半解，链接很多，搬用的也不少，错误的地方应该也有，表述不清楚的~凑合着过吧。  本篇主要讲述   Tcp/IP模型 和 OSI模型 思考网络协议的运作方式 实践抓包 TCP/IP 协议如何处理数据通信 各层的 Header 分析 理解TCP/IP各层 Http 和Https、IPv4 和IPv6、TCP 和UDP 加密">
 <meta property="og:locale" content="za-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/01/19/TCP-IP/picture1.png">
-<meta property="og:image" content="http://yoursite.com/2018/01/19/TCP-IP/picture1.png">
+<meta property="og:image" content="http://yoursite.com/2018/01/19/TCP-IP/picture2.png">
 <meta property="og:image" content="http://yoursite.com/2018/01/19/TCP-IP/picture3.png">
 <meta property="og:image" content="http://yoursite.com/2018/01/19/TCP-IP/picture4.png">
 <meta property="og:image" content="http://yoursite.com/2018/01/19/TCP-IP/picture5.png">
 <meta property="og:image" content="http://yoursite.com/2018/01/19/TCP-IP/picture6.png">
 <meta property="og:image" content="http://yoursite.com/2018/01/19/TCP-IP/picture7.png">
 <meta property="og:image" content="http://yoursite.com/2018/01/19/TCP-IP/picture8.png">
-<meta property="og:updated_time" content="2018-01-19T09:42:35.000Z">
+<meta property="og:updated_time" content="2018-01-19T09:48:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TCP&#x2F;IP">
 <meta name="twitter:description" content="写在前面  ​    对于这些内容也是第一次整理，对很多知识也是一知半解，链接很多，搬用的也不少，错误的地方应该也有，表述不清楚的~凑合着过吧。  本篇主要讲述   Tcp/IP模型 和 OSI模型 思考网络协议的运作方式 实践抓包 TCP/IP 协议如何处理数据通信 各层的 Header 分析 理解TCP/IP各层 Http 和Https、IPv4 和IPv6、TCP 和UDP 加密">
@@ -194,7 +194,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -204,7 +204,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -268,7 +268,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-19T17:28:33+08:00">
                 2018-01-19
@@ -364,7 +364,7 @@
 <p>tcpdump文章中已经写的很好了，可以仔细看看，具体就不细说了，亲试可用，有空也可以看看他的其他作品~</p>
 <p>那么使用过之后还是有很多疑惑的话，那么带着这些问题去了解更多~</p>
 <h4 id="TCP-IP-协议如何处理数据通信"><a href="#TCP-IP-协议如何处理数据通信" class="headerlink" title="TCP/IP 协议如何处理数据通信"></a>TCP/IP 协议如何处理数据通信</h4><p>​    包是指通过网络传输的基本信息单元。基本的包由头（包含发送系统和接收系统的地址）和正文或<strong>有效负荷</strong>（包含要传送的数据）组成。当包经由 TCP/IP 协议栈时，每一层上的协议都会在基本头中添加或删除字段。当发送系统上的协议向包头中添加数据时，此过程即被称为<strong>数据封装</strong>。此外，每一层对于已更改的包都有不同的称呼，如下图中所示。</p>
-<img src="/2018/01/19/TCP-IP/picture1.png">
+<img src="/2018/01/19/TCP-IP/picture2.png">
 <blockquote>
 <p>接收主机如何处理包</p>
 </blockquote>
@@ -495,9 +495,8 @@
 <p>传输层加密</p>
 </blockquote>
 <pre><code>同样看下现有的传输层加密方式有哪些
-</code></pre><p>​    1.SSL：Secure Sockets Layer ，加密套接字协议层。</p>
-<pre><code>2.TLS：Transport Layer Security，安全传输层协议。
-</code></pre><p>​    SSL起源：SSL是为网络通信提供安全及数据完整性的一种安全协议,在传输层对网络连接进行加密，用以保障在Internet上数据传输之安全，利用数据加密技术，可确保数据在网络上之传输过程中不会被截取及窃听。</p>
+</code></pre><p>​    1.SSL：Secure Sockets Layer ，加密套接字协议层。 2.TLS：Transport Layer Security，安全传输层协议。</p>
+<p>​    SSL起源：SSL是为网络通信提供安全及数据完整性的一种安全协议,在传输层对网络连接进行加密，用以保障在Internet上数据传输之安全，利用数据加密技术，可确保数据在网络上之传输过程中不会被截取及窃听。</p>
 <p>​    SSL工作模式：SSL协议可分为两层：记录协议、握手协议SSL Record Protocol：建立在可靠的传输协议如TCP之上为高层协议提供数据封装、压缩、加密等基本功能。  SSL Handshake Protocol：建立在SSL记录协议之上用于在实际的数据传输开始前，通讯双方进行身份认证、协商加密算法、交换加密密钥等。    <a href="http://blog.51cto.com/xuding/1732275" target="_blank" rel="noopener">参考</a></p>
 <p>​    工作模式：SSL 协议实现步骤总结：</p>
 <p>​          1.客户端生成随机数，建立会话前商定(如约定的加密算法)，服务器端将自己生成的随机数返回</p>
@@ -515,8 +514,8 @@
 <p>​    大概加密方式有Base64、MD5、SHA1等（又到了熟悉用过的东西了2333）</p>
 <p>​    好吧，直接说工作模式吧,以常见的Base64、MD5举例：</p>
 <p>​    <strong>Base64</strong>：Base64编码可以成为密码学的基石。可以将任意的二进制数据进行Base64编码。IOS/Android 开发语言也提供相应的API，可以直接调用。<a href="http://blog.csdn.net/u011961093/article/details/52611161" target="_blank" rel="noopener">参考</a></p>
-<pre><code>**MD5**: 好吧，不多解释了。其大概是：加密后密文的长度是定长（32个字符的密文），且不可以逆推反算（不能根据密文推算出明文），但是可以暴力破解，碰撞监测 ，配合字符串替换使用效果更佳~
-</code></pre><p>​    剖析：使用场景：用户的一些隐私数据加密，密码，手机号等等在前后端传递过程中不容易泄漏。</p>
+<p>​    <strong>MD5</strong>: 好吧，不多解释了。其大概是：加密后密文的长度是定长（32个字符的密文），且不可以逆推反算（不能根据密文推算出明文），但是可以暴力破解，碰撞监测 ，配合字符串替换使用效果更佳~</p>
+<p>​    剖析：使用场景：用户的一些隐私数据加密，密码，手机号等等在前后端传递过程中不容易泄漏。</p>
 <blockquote>
 <p>小结</p>
 </blockquote>
@@ -611,10 +610,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
+            Übersicht
           </li>
         </ul>
       
@@ -639,7 +638,7 @@
                 <a href="/archives/">
               
                   <span class="site-state-item-count">6</span>
-                  <span class="site-state-item-name">posts</span>
+                  <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
             
@@ -707,7 +706,7 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
