@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="za-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="本文主要内容包括  核心动画介绍 基本使用方法 特殊属性分析 相关内容介绍 Core Animation 底层层级 提高性能">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CoreAnimation">
+<meta property="og:url" content="http://yoursite.com/2018/01/23/CoreAnimation/index.html">
+<meta property="og:site_name" content="Hello World">
+<meta property="og:description" content="本文主要内容包括  核心动画介绍 基本使用方法 特殊属性分析 相关内容介绍 Core Animation 底层层级 提高性能">
+<meta property="og:locale" content="za-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/01/23/CoreAnimation/1.png">
+<meta property="og:image" content="http://yoursite.com/2018/01/23/CoreAnimation/2.png">
+<meta property="og:image" content="http://yoursite.com/2018/01/23/CoreAnimation/3.png">
+<meta property="og:image" content="http://yoursite.com/2018/01/23/CoreAnimation/4.png">
+<meta property="og:image" content="http://yoursite.com/2018/01/23/CoreAnimation/5.png">
+<meta property="og:image" content="http://yoursite.com/2018/01/23/CoreAnimation/6.png">
+<meta property="og:image" content="http://yoursite.com/2018/01/23/CoreAnimation/7.png">
+<meta property="og:image" content="http://yoursite.com/2018/01/23/CoreAnimation/8.png">
+<meta property="og:image" content="http://yoursite.com/2018/01/23/CoreAnimation/9.png">
+<meta property="og:updated_time" content="2018-01-23T10:10:28.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CoreAnimation">
+<meta name="twitter:description" content="本文主要内容包括  核心动画介绍 基本使用方法 特殊属性分析 相关内容介绍 Core Animation 底层层级 提高性能">
+<meta name="twitter:image" content="http://yoursite.com/2018/01/23/CoreAnimation/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/01/23/CoreAnimation/"/>
+
+
+
+
+
+  <title>CoreAnimation | Hello World</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="za-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hello World</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">心若有桃园,何处不是水云间</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/23/CoreAnimation/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vampire_时代">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello World">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">CoreAnimation</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-23T17:57:52+08:00">
+                2018-01-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本文主要内容包括</p>
+<blockquote>
+<p>核心动画介绍</p>
+<p>基本使用方法</p>
+<p>特殊属性分析</p>
+<p>相关内容介绍</p>
+<p>Core Animation 底层层级</p>
+<p>提高性能</p>
+</blockquote>
+<a id="more"></a>
+<h4 id="基础介绍"><a href="#基础介绍" class="headerlink" title="基础介绍"></a>基础介绍</h4><p>Q ：核心动画是做什么的？</p>
+<p>A ： 核心动画提供了一个通用的系统动画视图和其他视觉元素的应用程序，为应用的视图和可视对象设置动画效果。大部分更改与修改视觉对象的属性有关，将任意图形转换应用于视图或更改视图的其他视觉属性。</p>
+<p>​    通俗一点也就是一些动画效果，一种形式，不影响原来的内容（也可以改变原有的视觉状态，但是Frame位置等不会变化）</p>
+<p>特点：</p>
+<ul>
+<li>Core Animation可以用在Mac OS X和iOS平台。</li>
+<li>Core Animation的动画执行过程都是在后台操作的，不会阻塞主线程。</li>
+<li>Core Animation是直接作用在CALayer上的，并非UIView。</li>
+</ul>
+<p>结构图如下：</p>
+<img src="/2018/01/23/CoreAnimation/1.png">
+<p>Q  ：如何绘制内容？</p>
+<p>A   :  当更改触发动画时，Core Animation将图层的位图和状态信息传递给图形硬件，图形硬件完成了使用新信息渲染位图的工作，如图1-1所示。在硬件中操作位图产生比在软件中更快的动画。</p>
+<p>​    绘制过程图：</p>
+<img src="/2018/01/23/CoreAnimation/2.png">
+<p>​    由于它操纵静态位图，因此基于图层的绘图与传统的基于视图的绘图技术有很大不同。使用基于视图的绘图时，对视图本身的更改通常会导致调用视图的<code>drawRect:</code>方法来使用新参数重绘内容。但是用这种方式绘制是昂贵的，因为它使用主线程上的CPU来完成。核心动画通过在硬件中操作缓存的位图来实现相同或类似的效果，从而尽可能地避免了这种花费。</p>
+<h4 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h4><blockquote>
+<p>继承结构图</p>
+</blockquote>
+<img src="/2018/01/23/CoreAnimation/3.png">
+<blockquote>
+<p>CAMediaTiming </p>
+</blockquote>
+<p>​    CAAnimation遵循了CAMediaTiming 协议，设置一些属性比如duration、RepeatCount 可以控制动画的一些状态值</p>
+<blockquote>
+<p>CABasicAnimation</p>
+</blockquote>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 基础动画,平移、旋转、缩放等</span></span><br><span class="line"><span class="keyword">let</span> anim =  <span class="type">CABasicAnimation</span>()</span><br><span class="line">anim.keyPath = <span class="string">"tansform.scale"</span> <span class="comment">//缩放  可以设置xyz方向  eg："position.y"</span></span><br><span class="line">anim.keyPath = <span class="string">"tansform.position"</span> <span class="comment">// 平移</span></span><br><span class="line">anim.keyPath = <span class="string">"tansform.rotation"</span> <span class="comment">// 旋转 </span></span><br><span class="line">anim.toValue = <span class="number">0</span></span><br><span class="line">anim.repeatCount = <span class="type">MAXFLOAT</span></span><br><span class="line">anim.duration = <span class="number">0.25</span></span><br><span class="line">anim.autoreverses = <span class="literal">true</span> <span class="comment">// 自动反转</span></span><br><span class="line"><span class="keyword">self</span>.layer.add(anim, forKey: <span class="literal">nil</span>) <span class="comment">// 添加动画</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>CAKeyframeAnimation</p>
+</blockquote>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 帧动画, 设置一些抖动等效果，可以设置状态值 values</span></span><br><span class="line"><span class="keyword">let</span>  anim =  <span class="type">CAKeyframeAnimation</span>()</span><br><span class="line">anim.keyPath = <span class="string">"tansform.rotation"</span></span><br><span class="line">anim.values = [<span class="type">Double</span>.pi,-<span class="type">Double</span>.pi] <span class="comment">// 角度</span></span><br><span class="line">anim.repeatCount = <span class="type">MAXFLOAT</span></span><br><span class="line">anim.duration = <span class="number">0.25</span></span><br><span class="line"><span class="keyword">self</span>.layer.add(anim, forKey: <span class="literal">nil</span>) <span class="comment">// 添加动画</span></span><br><span class="line">    </span><br><span class="line"><span class="comment">// Tip</span></span><br><span class="line"><span class="comment">// 需要把动画效果和 事件处理在同一个代码块中 才生效</span></span><br><span class="line"><span class="comment">// eg :</span></span><br><span class="line">imageView.image = <span class="type">UIImage</span>(string:<span class="string">"xxx"</span>)<span class="comment">// 设置新的image，并有上述的push效果</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>CAAnimationGroup</p>
+</blockquote>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">   <span class="comment">// 动画组, 可以把单个的其他对象 添加进去，一起执行</span></span><br><span class="line">   <span class="keyword">let</span> group = <span class="type">CAAnimationGroup</span>()</span><br><span class="line">   group.animations = [] <span class="comment">// 添加 动画对象</span></span><br><span class="line">   <span class="keyword">self</span>.layer.add(group, forKey: <span class="literal">nil</span>)</span><br><span class="line">       </span><br><span class="line">   <span class="comment">/*使用动画组的好处,不需要每次都去添加动画,设置动画完成时的属性.</span></span><br><span class="line"><span class="comment">只需要把要执行的动画,添加到动画组的animations数组当中即可,</span></span><br><span class="line"><span class="comment">最后把组动画添加到层上面,就会自动执行数组当中的动画.</span></span><br><span class="line"><span class="comment">动画完成时设置的属性也只需要设置一次.*/</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>CAPropertyAnimation</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// 是一个抽象类, 没有具体的动画对象，使用CAKeyframeAnimation、CABasicAnimation</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>CATransition</p>
+</blockquote>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 过渡动画, 类似</span></span><br><span class="line"><span class="keyword">let</span> anim = <span class="type">CATransition</span>()</span><br><span class="line">anim.type = <span class="string">"push"</span> <span class="comment">// 等等其他很多效果 "pageCurl" // 翻页</span></span><br><span class="line">anim.subtype = kCATransitionFromRight <span class="comment">// 转场的方向</span></span><br><span class="line">anim.startProgress = <span class="number">0.5</span> <span class="comment">// 开始位置</span></span><br><span class="line"><span class="keyword">self</span>.layer.add(anim, forKey: <span class="literal">nil</span>) <span class="comment">// 添加动画</span></span><br></pre></td></tr></table></figure>
+<img src="/2018/01/23/CoreAnimation/4.png">
+<blockquote>
+<p>强制保留动画的最终状态</p>
+</blockquote>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 不要删除动画</span></span><br><span class="line">anim.isRemovedOnCompletion = <span class="literal">false</span></span><br><span class="line"><span class="comment">// 动画始终保持最前面</span></span><br><span class="line">anim.fillMode = kCAFillModeBackwards <span class="comment">// k _ CA _ fillMode _ type</span></span><br></pre></td></tr></table></figure>
+<h4 id="属性分析"><a href="#属性分析" class="headerlink" title="属性分析"></a>属性分析</h4><blockquote>
+<p>Mask  Layer</p>
+</blockquote>
+<p>​    设置圆角的时候经常用到</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">self</span>.layer.cornerRadius = <span class="number">10</span></span><br><span class="line"><span class="keyword">self</span>.layer.masksToBounds = <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>​    那么观察一下 <code>self.layer.mask</code>  返回的Layer</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">open</span> <span class="keyword">var</span> mask: <span class="type">CALayer</span>?</span><br></pre></td></tr></table></figure>
+<p>​    <strong>mask图层定义了父图层的部分可见区域。</strong>mask真正厉害的地方在于蒙版图层不局限于静态图。任何有图层构成的都可以作为mask属性，这意味着你的蒙版可以通过代码甚至是动画实时生成！<br>​    效果如下：</p>
+<img src="/2018/01/23/CoreAnimation/5.png">
+<p>​    也就是这样色儿的：  </p>
+<img src="/2018/01/23/CoreAnimation/6.png">
+<blockquote>
+<p>contents</p>
+</blockquote>
+<p>​    自定义Layer 示例代码：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> lay = <span class="type">CALayer</span>()</span><br><span class="line">lay.frame = <span class="keyword">self</span>.bounds</span><br><span class="line"><span class="keyword">self</span>.layer.addSublayer(lay)</span><br><span class="line">lay.contents = <span class="type">UIImage</span>.<span class="keyword">init</span>(named: <span class="string">"xxx"</span>)?.cgImage <span class="comment">// 需要 cgImage 类似 cgCorlor</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>cgCorlor cgImage</p>
+</blockquote>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Layer QuartzCore  跨平台</span></span><br><span class="line"><span class="comment">// CGImageRef  cgCorlorRef  CoreGraphics 跨平台</span></span><br><span class="line"><span class="comment">// UIColror UIimage  UIKit   ios</span></span><br><span class="line"><span class="comment">// 保持跨平台型 不允许 使用 UIColror UIimage 需要转成 CGImageRef  cgCorlorRef</span></span><br><span class="line"><span class="comment">// 将 CoreGraphics 和 UIKit 桥接起来  Access the underlying CGColor or CIColor.</span></span><br></pre></td></tr></table></figure>
+<h4 id="隐式动画"><a href="#隐式动画" class="headerlink" title="隐式动画"></a>隐式动画</h4><blockquote>
+<p>什么是隐式动画？</p>
+</blockquote>
+<p>​    根层:UIView内部自动关联着的那个layer我们称它是根层.<br>​    非根层:自己手动创建的层,称为非根层.</p>
+<p>​    隐式动画就是当对非根层的部分属性进行修改时, 它会自动的产生一些动画的效果.称这个默认产生的动画为隐式动画.</p>
+<blockquote>
+<p>运作方式</p>
+</blockquote>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 动画 底层 都是将操作 包装成一个 事务</span></span><br><span class="line"><span class="comment">// 很多操作都绑定在一起，当操作都全部执行完毕，它才运行下一步操作</span></span><br><span class="line"><span class="type">CATransaction</span>.begin() <span class="comment">// Tip：区别一下CATransition(过渡动画)</span></span><br><span class="line"><span class="comment">// 事务区间</span></span><br><span class="line"><span class="comment">// eg ： 改变layer Frame（缩放平移） bgcorlor（渐变）</span></span><br><span class="line"><span class="type">CATransaction</span>.setDisableActions(<span class="literal">true</span>) <span class="comment">// 设置事务没有动画</span></span><br><span class="line"><span class="type">CATransaction</span>.setAnimationDuration(<span class="number">0.5</span>) <span class="comment">// 时长</span></span><br><span class="line"><span class="type">CATransaction</span>.commit() <span class="comment">// 提交事务</span></span><br></pre></td></tr></table></figure>
+<h4 id="CADisplayLink"><a href="#CADisplayLink" class="headerlink" title="CADisplayLink"></a>CADisplayLink</h4><ul>
+<li><p>CADisplayLink是一种以屏幕刷新频率触发的时钟机制，每秒钟执行大约60次左右</p>
+</li>
+<li><p>CADisplayLink是一个计时器，可以使绘图代码与视图的刷新频率保持同步，而NSTimer无法确保计时器实际被触发的准确时间</p>
+</li>
+<li><p>使用方法：</p>
+</li>
+<li><ul>
+<li>定义CADisplayLink并制定触发调用方法</li>
+<li>将显示链接添加到主运行循环队列</li>
+</ul>
+</li>
+</ul>
+<h4 id="UIView-动画"><a href="#UIView-动画" class="headerlink" title="UIView 动画"></a>UIView 动画</h4><p>​    示例代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">UIView.animate(withDuration: 0.5) &#123;</span><br><span class="line">       // 旋转 那个周有值 代表会 按照哪个轴的方向 旋转</span><br><span class="line">       // 多个值 会按照向量计算</span><br><span class="line">       self.layer.transform = CATransform3DMakeRotation( CGFloat.pi, 1, 0, 0)</span><br><span class="line">       self.layer.setValue(CGFloat.pi, forKey: &quot;transform.rotation&quot;)</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<img src="/2018/01/23/CoreAnimation/7.png">
+<h4 id="使用-View-Animation-还是使用-Core-Animation"><a href="#使用-View-Animation-还是使用-Core-Animation" class="headerlink" title="使用 View Animation 还是使用 Core Animation"></a>使用 View Animation 还是使用 Core Animation</h4><p>​    还是强调一下： CoreAnimation 只是个假象,只作用在layer上</p>
+<ol>
+<li>不会改变控件的位置、大小 </li>
+<li>点击事件响应位置还是会 在原来位置，不会再看到的位置 </li>
+<li>通过强制保留动画的最终状态也不会影响上述两条</li>
+</ol>
+<blockquote>
+<p>使用 View Animation</p>
+</blockquote>
+<p>需要交互的时候， 因为UIView 继承 UIResponder(事件响应) ，来处理用户响应，效果比较少</p>
+<blockquote>
+<p>使用 Core Animation</p>
+</blockquote>
+<p>即操作CALayer，根据使用场景需要有：转场动画、帧动画、动画组等 种多种效果，而且CALayer的性能会高一些，因为它少了事件处理的功能，更加轻量级</p>
+<h4 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h4><p>~</p>
+<h4 id="Core-Animation-底层层级"><a href="#Core-Animation-底层层级" class="headerlink" title="Core Animation 底层层级"></a>Core Animation 底层层级</h4><p>​    使用Core Animation的应用程序有三组图层对象。每一组图层对象在使应用程序的内容出现在屏幕上都有不同的作用：</p>
+<ul>
+<li><em>layer tree</em>中的对象（或简称为“图层树”）是您的应用程序与其交互最多的对象。此树中的对象是存储任何动画的目标值的模型对象。每当更改图层的属性时，都使用这些对象之一。</li>
+<li><em>presentation tree</em> 中的对象包含任何正在运行的动画的正在进行的值。尽管图层树对象包含动画的目标值，但是呈现树中的对象反映了屏幕上显示的当前值。你不应该修改这个树中的对象。而是使用这些对象来读取当前的动画值，也许从这些值开始创建一个新的动画。</li>
+<li><em>render tree</em>中的对象执行实际的动画，并且是Core Animation专用的。</li>
+</ul>
+<img src="/2018/01/23/CoreAnimation/8.png">
+<p>​    对于layer tree中的每个对象，在presentation tree和render tree中都有一个匹配的对象，如图下图所示。如前所述，应用程序主要处理ayer tree中的对象，但有时可能访问presentation tree中的对象。具体来说，访问presentation Layer层树中对象的属性返回layer tree中的对应对象。</p>
+<img src="/2018/01/23/CoreAnimation/9.png">
+<blockquote>
+<p>Tip </p>
+</blockquote>
+<p>​     只有在动画正在执行时，才能访问presentation tree 中的对象。在动画进行过程中，presentation tree 包含当前在屏幕上出现的图层的状态值，即进行中的状态值。但是这个值和layer tree中的不同，layer tree总是反映代码设置的最后一个值，并等同于动画的最终状态。</p>
+<h4 id="提高性能"><a href="#提高性能" class="headerlink" title="提高性能"></a>提高性能</h4><p>有几种方法可以使您的图层实现更高效。然而，与任何这样的优化一样，在尝试优化之前，您应该始终测量代码的当前性能。这为您提供了一个可用于确定优化是否正常工作的基线。</p>
+<blockquote>
+<p>尽可能使用不透明层</p>
+</blockquote>
+<p>设置<code>opaque</code>图层的属性<code>YES</code>让Core Animation知道它不需要维护图层的Alpha通道。没有alpha通道意味着合成器不需要将图层的内容与背景内容混合，这样可以节省渲染时间。但是，此属性主要与作为层支持视图一部分的图层或Core Animation创建底层图位图的情况有关。如果将图像直接分配给图层的<code>contents</code>属性，则无论<code>opaque</code>属性中的值如何，都会保留该图像的Alpha通道。</p>
+<blockquote>
+<p>为CAShapeLayer对象使用更简单的路径</p>
+</blockquote>
+<p>在<code>CAShapeLayer</code>类创建通过在合成时使你提供为位图图像路径的内容。其优点是，图层始终以尽可能好的分辨率绘制路径，但这样做的好处是需要花费额外的渲染时间。如果您提供的路径非常复杂，则对该路径进行栅格化可能会过于昂贵。如果图层大小频繁变化（因此必须经常重绘），绘图花费的时间可能会累加起来，成为性能瓶颈。</p>
+<p>减少形状图层绘制时间的一种方法是将复杂的形状分解成更简单的形状。<code>CAShapeLayer</code>在合成器中使用更简单的路径并将多个对象叠加到另一个之上可能比绘制一条较大的复杂路径要快得多。这是因为绘图操作发生在CPU上，而合成发生在GPU上。就像这种性质的任何简化一样，潜在的性能收益取决于你的内容。因此，在优化之前测量代码的性能尤为重要，以便您有比较基准。</p>
+<blockquote>
+<p>为相同的图层显式设置图层内容</p>
+</blockquote>
+<p>如果您在多个图层对象中使用相同的图像，请自行加载图像并将其直接分配给<code>contents</code>这些图层对象的属性。将<code>contents</code>属性分配给该属性将防止该层为后备存储分配内存。相反，该图层使用您提供的图像作为其后备存储。当多个图层使用相同的图像时，这意味着所有这些图层共享相同的内存，而不是为自己分配图像副本。</p>
+<blockquote>
+<p>始终将图层大小设置为积分值</p>
+</blockquote>
+<p>为了获得最佳效果，请始终将图层对象的宽度和高度设置为整数值。虽然使用浮点数指定图层边界的宽度和高度，但是图层边界最终将用于创建位图图像。指定宽度和高度的整数值简化了Core Animation必须执行的工作，以创建和管理后备存储和其他图层信息。</p>
+<blockquote>
+<p>根据需要使用异步图层呈现</p>
+</blockquote>
+<p>您在委托<code>drawLayer:inContext:</code>方法或视图<code>drawRect:</code>方法中执行的任何绘图通常在应用的主线程上同步发生。但是，在某些情况下，同步绘制内容可能无法提供最佳性能。如果您注意到您的动画效果不佳，则可以尝试启用<code>drawsAsynchronously</code>图层上的属性以将这些操作移至后台线程。如果你这样做，确保你的绘图代码是线程安全的。和往常一样，在把它放入生产代码之前，应该总是先测量绘图的性能。</p>
+<blockquote>
+<p>为图层添加阴影时指定阴影路径</p>
+</blockquote>
+<p>让核心动画决定阴影的形状可能会很昂贵，并影响您的应用程序的性能。而不是让核心动画确定阴影的形状，而是使用<code>shadowPath</code>属性显式指定阴影形状<code>CALayer</code>。当您为此属性指定路径对象时，Core Animation将使用该形状来绘制和缓存阴影效果。对于形状永远不会改变或很少改变的图层，这可以通过减少Core Animation的渲染量来大大提高性能。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/19/TCP-IP/" rel="next" title="TCP/IP">
+                <i class="fa fa-chevron-left"></i> TCP/IP
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="Vampire_时代" />
+            
+              <p class="site-author-name" itemprop="name">Vampire_时代</p>
+              <p class="site-description motion-element" itemprop="description">It will be ok.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">Artikel</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#基础介绍"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x57FA;&#x7840;&#x4ECB;&#x7ECD;" class="headerlink" title="&#x57FA;&#x7840;&#x4ECB;&#x7ECD;"></a>&#x57FA;&#x7840;&#x4ECB;&#x7ECD;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何使用"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x5982;&#x4F55;&#x4F7F;&#x7528;" class="headerlink" title="&#x5982;&#x4F55;&#x4F7F;&#x7528;"></a>&#x5982;&#x4F55;&#x4F7F;&#x7528;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性分析"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x5C5E;&#x6027;&#x5206;&#x6790;" class="headerlink" title="&#x5C5E;&#x6027;&#x5206;&#x6790;"></a>&#x5C5E;&#x6027;&#x5206;&#x6790;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#隐式动画"><span class="nav-number">4.</span> <span class="nav-text"><a href="#&#x9690;&#x5F0F;&#x52A8;&#x753B;" class="headerlink" title="&#x9690;&#x5F0F;&#x52A8;&#x753B;"></a>&#x9690;&#x5F0F;&#x52A8;&#x753B;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CADisplayLink"><span class="nav-number">5.</span> <span class="nav-text"><a href="#CADisplayLink" class="headerlink" title="CADisplayLink"></a>CADisplayLink</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UIView-动画"><span class="nav-number">6.</span> <span class="nav-text"><a href="#UIView-&#x52A8;&#x753B;" class="headerlink" title="UIView &#x52A8;&#x753B;"></a>UIView &#x52A8;&#x753B;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用-View-Animation-还是使用-Core-Animation"><span class="nav-number">7.</span> <span class="nav-text"><a href="#&#x4F7F;&#x7528;-View-Animation-&#x8FD8;&#x662F;&#x4F7F;&#x7528;-Core-Animation" class="headerlink" title="&#x4F7F;&#x7528; View Animation &#x8FD8;&#x662F;&#x4F7F;&#x7528; Core Animation"></a>&#x4F7F;&#x7528; View Animation &#x8FD8;&#x662F;&#x4F7F;&#x7528; Core Animation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实战"><span class="nav-number">8.</span> <span class="nav-text"><a href="#&#x5B9E;&#x6218;" class="headerlink" title="&#x5B9E;&#x6218;"></a>&#x5B9E;&#x6218;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Core-Animation-底层层级"><span class="nav-number">9.</span> <span class="nav-text"><a href="#Core-Animation-&#x5E95;&#x5C42;&#x5C42;&#x7EA7;" class="headerlink" title="Core Animation &#x5E95;&#x5C42;&#x5C42;&#x7EA7;"></a>Core Animation &#x5E95;&#x5C42;&#x5C42;&#x7EA7;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提高性能"><span class="nav-number">10.</span> <span class="nav-text"><a href="#&#x63D0;&#x9AD8;&#x6027;&#x80FD;" class="headerlink" title="&#x63D0;&#x9AD8;&#x6027;&#x80FD;"></a>&#x63D0;&#x9AD8;&#x6027;&#x80FD;</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vampire_时代</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
