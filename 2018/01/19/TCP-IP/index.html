@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="za-Hans">
+<html class="theme-next muse use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="PS3,Games," />
 
 
 
@@ -80,12 +80,13 @@
 
 
 <meta name="description" content="写在前面  ​    对于这些内容也是第一次整理，对很多知识也是一知半解，链接很多，搬用的也不少，错误的地方应该也有，表述不清楚的~凑合着过吧。  本篇主要讲述   Tcp/IP模型 和 OSI模型 思考网络协议的运作方式 实践抓包 TCP/IP 协议如何处理数据通信 各层的 Header 分析 理解TCP/IP各层 Http 和Https、IPv4 和IPv6、TCP 和UDP 加密">
+<meta name="keywords" content="PS3,Games">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TCP&#x2F;IP">
 <meta property="og:url" content="http://yoursite.com/2018/01/19/TCP-IP/index.html">
 <meta property="og:site_name" content="Hello World">
 <meta property="og:description" content="写在前面  ​    对于这些内容也是第一次整理，对很多知识也是一知半解，链接很多，搬用的也不少，错误的地方应该也有，表述不清楚的~凑合着过吧。  本篇主要讲述   Tcp/IP模型 和 OSI模型 思考网络协议的运作方式 实践抓包 TCP/IP 协议如何处理数据通信 各层的 Header 分析 理解TCP/IP各层 Http 和Https、IPv4 和IPv6、TCP 和UDP 加密">
-<meta property="og:locale" content="za-Hans">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/01/19/TCP-IP/picture1.png">
 <meta property="og:image" content="http://yoursite.com/2018/01/19/TCP-IP/picture2.png">
 <meta property="og:image" content="http://yoursite.com/2018/01/19/TCP-IP/picture3.png">
@@ -95,7 +96,7 @@
 <meta property="og:image" content="http://yoursite.com/2018/01/19/TCP-IP/picture7.png">
 <meta property="og:image" content="http://yoursite.com/2018/01/19/TCP-IP/picture8.png">
 <meta property="og:image" content="http://yoursite.com/2018/01/19/TCP-IP/picture9.png">
-<meta property="og:updated_time" content="2018-01-19T09:48:43.000Z">
+<meta property="og:updated_time" content="2018-01-26T06:28:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TCP&#x2F;IP">
 <meta name="twitter:description" content="写在前面  ​    对于这些内容也是第一次整理，对很多知识也是一知半解，链接很多，搬用的也不少，错误的地方应该也有，表述不清楚的~凑合着过吧。  本篇主要讲述   Tcp/IP模型 和 OSI模型 思考网络协议的运作方式 实践抓包 TCP/IP 协议如何处理数据通信 各层的 Header 分析 理解TCP/IP各层 Http 和Https、IPv4 和IPv6、TCP 和UDP 加密">
@@ -115,7 +116,7 @@
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
-      author: 'Author'
+      author: '博主'
     },
     algolia: {
       applicationID: '',
@@ -147,7 +148,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="za-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -195,7 +196,37 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
           </a>
         </li>
       
@@ -205,7 +236,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            归档
           </a>
         </li>
       
@@ -269,9 +300,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-19T17:28:33+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-19T17:28:33+08:00">
                 2018-01-19
               </time>
             
@@ -281,6 +312,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Diary/" itemprop="url" rel="index">
+                    <span itemprop="name">Diary</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -417,16 +470,12 @@
 <ul>
 <li><p>先上报文图：</p>
 <img src="/2018/01/19/TCP-IP/picture7.png">
+<p>​一个HTTP请求报文由请求行（request line）、请求头部（header）、空行和请求数据4个部分组成。</p>
 </li>
-</ul>
-<p>​    一个HTTP请求报文由请求行（request line）、请求头部（header）、空行和请求数据4个部分组成。</p>
-<ul>
 <li><p>常用的请求头</p>
 <img src="/2018/01/19/TCP-IP/picture8.png">
+<p>​这里只列举了部分，还是给到<a href="https://en.wikipedia.org/wiki/List_of_HTTP_header_fields" target="_blank" rel="noopener">更多详情</a></p>
 </li>
-</ul>
-<p>​    这里只列举了部分，还是给到<a href="https://en.wikipedia.org/wiki/List_of_HTTP_header_fields" target="_blank" rel="noopener">更多详情</a></p>
-<ul>
 <li><p>再来一张场景图</p>
 <img src="/2018/01/19/TCP-IP/picture9.png">
 </li>
@@ -540,6 +589,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/PS3/" rel="tag"># PS3</a>
+          
+            <a href="/tags/Games/" rel="tag"># Games</a>
+          
+        </div>
+      
 
       
       
@@ -615,10 +672,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Inhaltsverzeichnis
+            文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Übersicht
+            站点概览
           </li>
         </ul>
       
@@ -643,13 +700,31 @@
                 <a href="/archives/">
               
                   <span class="site-state-item-count">7</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
 
             
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
             
 
           </nav>
@@ -711,7 +786,7 @@
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
 
@@ -719,7 +794,7 @@
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
 
 
 
