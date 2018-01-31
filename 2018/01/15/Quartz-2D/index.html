@@ -50,19 +50,19 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
 
 
 
@@ -83,7 +83,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Quartz 2D">
 <meta property="og:url" content="http://yoursite.com/2018/01/15/Quartz-2D/index.html">
-<meta property="og:site_name" content="Hello World">
+<meta property="og:site_name" content="Vampire_”时代”">
 <meta property="og:description" content="文本主要包括 Quartz2D 概述   Quartz2D 介绍  图形上下文介绍  Quartz2D的内存管理 CALayer 介绍 怎么自定义View  图形上下文的使用  使用主要流程 截屏  、水印儿、圆角等常见功能">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/01/15/Quartz-2D/exampleHeart.png">
@@ -101,7 +101,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Muse',
-    version: '5.1.3',
+    version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
@@ -128,7 +128,7 @@
 
 
 
-  <title>Quartz 2D | Hello World</title>
+  <title>Quartz 2D | Vampire_”时代”</title>
   
 
 
@@ -158,7 +158,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hello World</span>
+        <span class="site-title">Vampire_”时代”</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -193,22 +193,32 @@
         </li>
       
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
           </a>
         </li>
       
@@ -250,11 +260,11 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Vampire_时代">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="image" content="/uploads/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hello World">
+      <meta itemprop="name" content="Vampire_”时代”">
     </span>
 
     
@@ -328,13 +338,13 @@
 </blockquote>
 <a id="more"></a>
 <h4 id="Quartz2D-概述"><a href="#Quartz2D-概述" class="headerlink" title="Quartz2D 概述"></a>Quartz2D 概述</h4><p>那么 接触Quartz2D之前  需要先了解一些相关的知识储备</p>
-<h5 id="Quartz2D-介绍"><a href="#Quartz2D-介绍" class="headerlink" title="Quartz2D 介绍"></a>Quartz2D 介绍</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Q: 什么是Quartz2D</span><br><span class="line">A: 1.是一个二维的绘图引擎,同时支持iOS和Mac系统</span><br><span class="line">   2.可以使用Quartz 2D应用程序编程接口（API）访问基于路径的绘图，</span><br><span class="line">   包括透明绘画，着色，绘制阴影，透明度图层，颜色管理，消除锯齿渲染，</span><br><span class="line">   以及PDF文档生成和PDF元数据访问</span><br><span class="line"></span><br><span class="line">Q: Quartz2D的常见使用方式</span><br><span class="line">A: 画基本线条,绘制文字,图片,截图,自定义UIView等</span><br><span class="line"></span><br><span class="line">Q: Quartz2D在开发中的价值</span><br><span class="line">A: 当我们的控件样式极其复杂时,可以把控件内部的结构给画出画,就是自定义控件.</span><br></pre></td></tr></table></figure>
-<h5 id="图形上下文介绍"><a href="#图形上下文介绍" class="headerlink" title="图形上下文介绍"></a>图形上下文介绍</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Q: 什么是图形上下文？</span><br><span class="line">A: 上下文是用来保存绘制的内容状态,并决定绘制到哪个地方的.</span><br><span class="line">   可以把绘制好的内容先保存到图形上下文,然后根据选择的图形上下文的方式不同,</span><br><span class="line">   绘制的内容显示到地方也不相同,即输出目标也不相同.</span><br><span class="line">   </span><br><span class="line">Q: 图形上下文的类型有那些?</span><br><span class="line">A:  1.Bitmap Graphics Context(位图上下文)</span><br><span class="line">    2.PDF Graphics Context</span><br><span class="line">	3.Window Graphics Context </span><br><span class="line">	4.Layer Graphics Context(图层上下文,自定义UIView取得上下文就是图层上下文,</span><br><span class="line">	UIView之所以能够显示就是因为他内部有一个图层)</span><br><span class="line">	5.Printer Graphics Context(打印机)</span><br></pre></td></tr></table></figure>
-<h5 id="Quartz2D的内存管理"><a href="#Quartz2D的内存管理" class="headerlink" title="Quartz2D的内存管理"></a>Quartz2D的内存管理</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Q: Quartz 2D 使用过程中会有引用计数嘛？</span><br><span class="line">A: Quartz使用Core Foundation内存管理模型，其中的对象是引用计数的。</span><br><span class="line">   创建时，Core Foundation对象以引用计数1开始。</span><br><span class="line">   可以通过调用保留该对象的函数来增加引用计数，并通过调用释放该对象的函数来减少引用计数。</span><br><span class="line">   当引用计数递减到0时，该对象被释放。</span><br><span class="line"></span><br><span class="line">Q: 有什么需要规则么</span><br><span class="line">A: 1. 一般情况下，如果您从名称中使用“创建”或“复制”这个单词的函数中获得一个对象，</span><br><span class="line">   则必须在完成时释放该对象。否则，会导致内存泄漏。</span><br><span class="line">   2. 如果您从名称中不包含单词“创建”或“复制”的函数获取对象，则不拥有对该对象的引用，并且不需要释放该对象。</span><br><span class="line">   3.例如，如果收到对CGColorspace对象的引用，则可以使用这些函数CGColorSpaceRetain并CGColorSpaceRelease根据需要保留和释放该对象。</span><br><span class="line">   还可以使用的核心基础功能CFRetain和CFRelease，不需要把对象置为nil或者NULL。</span><br></pre></td></tr></table></figure>
+<h5 id="Quartz2D-介绍"><a href="#Quartz2D-介绍" class="headerlink" title="Quartz2D 介绍"></a>Quartz2D 介绍</h5><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">Q:</span> 什么是Quartz2D</span><br><span class="line"><span class="symbol">A:</span> <span class="number">1.</span>是一个二维的绘图引擎,同时支持iOS和Mac系统</span><br><span class="line">   <span class="number">2.</span>可以使用Quartz <span class="number">2</span>D应用程序编程接口（API）访问基于路径的绘图，</span><br><span class="line">   包括透明绘画，着色，绘制阴影，透明度图层，颜色管理，消除锯齿渲染，</span><br><span class="line">   以及PDF文档生成和PDF元数据访问</span><br><span class="line"></span><br><span class="line"><span class="symbol">Q:</span> Quartz2D的常见使用方式</span><br><span class="line"><span class="symbol">A:</span> 画基本线条,绘制文字,图片,截图,自定义UIView等</span><br><span class="line"></span><br><span class="line"><span class="symbol">Q:</span> Quartz2D在开发中的价值</span><br><span class="line"><span class="symbol">A:</span> 当我们的控件样式极其复杂时,可以把控件内部的结构给画出画,就是自定义控件.</span><br></pre></td></tr></table></figure>
+<h5 id="图形上下文介绍"><a href="#图形上下文介绍" class="headerlink" title="图形上下文介绍"></a>图形上下文介绍</h5><figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Q: 什么是图形上下文？</span><br><span class="line">A: 上下文是用来保存绘制的内容状态,并决定绘制到哪个地方的.</span><br><span class="line">   可以把绘制好的内容先保存到图形上下文,然后根据选择的图形上下文的方式不同,</span><br><span class="line">   绘制的内容显示到地方也不相同,即输出目标也不相同.</span><br><span class="line">   </span><br><span class="line">Q: 图形上下文的类型有那些?</span><br><span class="line">A:  <span class="number">1.</span>Bitmap <span class="keyword">Graphics</span> <span class="keyword">Context</span>(位图上下文)</span><br><span class="line">    <span class="number">2.</span><span class="keyword">PDF</span> <span class="keyword">Graphics</span> <span class="keyword">Context</span></span><br><span class="line">	<span class="number">3.</span>Window <span class="keyword">Graphics</span> <span class="keyword">Context</span> </span><br><span class="line">	<span class="number">4.</span>Layer <span class="keyword">Graphics</span> <span class="keyword">Context</span>(图层上下文,自定义UIView取得上下文就是图层上下文,</span><br><span class="line">	UIView之所以能够显示就是因为他内部有一个图层)</span><br><span class="line">	<span class="number">5.</span>Printer <span class="keyword">Graphics</span> <span class="keyword">Context</span>(打印机)</span><br></pre></td></tr></table></figure>
+<h5 id="Quartz2D的内存管理"><a href="#Quartz2D的内存管理" class="headerlink" title="Quartz2D的内存管理"></a>Quartz2D的内存管理</h5><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Q: Quartz <span class="number">2</span>D 使用过程中会有引用计数嘛？</span><br><span class="line">A: Quartz使用Core Foundation内存管理模型，其中的对象是引用计数的。</span><br><span class="line">   创建时，Core Foundation对象以引用计数<span class="number">1</span>开始。</span><br><span class="line">   可以通过调用保留该对象的函数来增加引用计数，并通过调用释放该对象的函数来减少引用计数。</span><br><span class="line">   当引用计数递减到<span class="number">0</span>时，该对象被释放。</span><br><span class="line"></span><br><span class="line">Q: 有什么需要规则么</span><br><span class="line">A: <span class="number">1.</span> 一般情况下，如果您从名称中使用“创建”或“复制”这个单词的函数中获得一个对象，</span><br><span class="line">   则必须在完成时释放该对象。否则，会导致内存泄漏。</span><br><span class="line">   <span class="number">2.</span> 如果您从名称中不包含单词“创建”或“复制”的函数获取对象，则不拥有对该对象的引用，并且不需要释放该对象。</span><br><span class="line">   <span class="number">3.</span>例如，如果收到对<span class="built_in">CGColorspace</span>对象的引用，则可以使用这些函数<span class="built_in">CGColorSpaceRetain</span>并<span class="built_in">CGColorSpaceRelease</span>根据需要保留和释放该对象。</span><br><span class="line">   还可以使用的核心基础功能<span class="built_in">CFRetain</span>和<span class="built_in">CFRelease</span>，不需要把对象置为<span class="literal">nil</span>或者<span class="literal">NULL</span>。</span><br></pre></td></tr></table></figure>
 <h5 id="CALayer-介绍"><a href="#CALayer-介绍" class="headerlink" title="CALayer 介绍"></a>CALayer 介绍</h5><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Q</span>: 什么是<span class="type">CALayer</span></span><br><span class="line"><span class="type">A</span>: 直接上<span class="type">UIView</span>中的属性说明 <span class="keyword">open</span> <span class="keyword">var</span> layer: <span class="type">CALayer</span> &#123; <span class="keyword">get</span> &#125;</span><br><span class="line"><span class="comment">// returns view's layer. Will always return a non-nil value. view is layer's delegate</span></span><br><span class="line"><span class="type">A</span>: 补充<span class="type">CALayer</span>继承自<span class="type">NSObject</span>,但是<span class="type">CALayer</span>不能响应任何用户事件,</span><br><span class="line">（<span class="type">UIView</span>中的响应事件都是<span class="type">UIResponder</span>处理的）可以认为<span class="type">UIView</span>注重于处理用户事件，而<span class="type">CALayer</span>则注重于显示效果。</span><br><span class="line"><span class="type">CALayer</span>是绘制内容的,不处理事件响应,与<span class="type">UIView</span>是相互依赖的,依赖于<span class="type">UIView</span>来显示绘制内容,</span><br><span class="line"><span class="type">UIView</span>依赖于<span class="type">CALayer</span>来提供内容。</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Q: Layer有位置大小吗？</span><br><span class="line">A: 每个UIView都包含一个CALayer在背后提供内容的绘制和显示</span><br><span class="line">   layer.bounds 来设定 WH</span><br><span class="line">   layer.position 来设置layer在父层 中的位置，以父层的左上角为原点，position为终点的位置  得到 一个矩形大小A</span><br><span class="line">   layer.anchorPoint( CGPoint 锚点  (0,0) -&gt; (1,1) )</span><br><span class="line">(默认值是(0.5,0.5)可能因为这个值影响正常显示) 根据bounds 和 坐标 得到一个 点 B(在layer中的) </span><br><span class="line">且 移动使 position 和 anchorPoint 重合 来 达到 确定一个新的frame 的目的, </span><br><span class="line">其实这个 有点绕,同过自定义一个Layer,多设个几个值,体验体验就明了了。</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Q: Layer内部是怎么实现的呢</span><br><span class="line">A: layer内部维护着三分layer tree，分别是</span><br><span class="line">presentLayer Tree(动画树)，</span><br><span class="line">modeLayer Tree(模型树),</span><br><span class="line">Render Tree(渲染树)，</span><br><span class="line">在做 iOS动画的时候，我们修改动画的属性，在动画的其实是Layer的presentLayer的属性值,</span><br><span class="line">而最终展示在界面上的其实是提供View的modelLayer。</span><br></pre></td></tr></table></figure>
-<h5 id="怎么自定义View"><a href="#怎么自定义View" class="headerlink" title="怎么自定义View"></a>怎么自定义View</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">首先得要有上下文,有了上下文才能决定把绘制的东西显示到哪个地方去.</span><br><span class="line">其次就是这个上下文必须得和View相关联.才能将内容绘制到View上面.</span><br><span class="line">	</span><br><span class="line">步骤:</span><br><span class="line">1.要先自定定UIView</span><br><span class="line">2.实现DrawRect方法</span><br><span class="line">3.在DrawRect方法中取得跟View相关联的上下文.</span><br><span class="line">4.绘制路径(描述路径长什么样).</span><br><span class="line">5.把描述好的路径保存到上下文(即:添加路径到上下文)</span><br><span class="line">6.把上下文的内容渲染到View</span><br></pre></td></tr></table></figure>
+<figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Q: Layer有位置大小吗？</span><br><span class="line">A: 每个UIView都包含一个CALayer在背后提供内容的绘制和显示</span><br><span class="line">   layer.bounds 来设定 WH</span><br><span class="line">   layer.position 来设置layer在父层 中的位置，以父层的左上角为原点，position为终点的位置  得到 一个矩形大小A</span><br><span class="line">   layer.<span class="built_in">anchor</span>Point( CGPoint 锚点  (<span class="number">0</span>,<span class="number">0</span>) -&gt; (<span class="number">1</span>,<span class="number">1</span>) )</span><br><span class="line">(默认值是(<span class="number">0.5</span>,<span class="number">0.5</span>)可能因为这个值影响正常显示) 根据bounds 和 坐标 得到一个 点 B(在layer中的) </span><br><span class="line">且 移动使 position 和 <span class="built_in">anchor</span>Point 重合 来 达到 确定一个新的frame 的目的, </span><br><span class="line">其实这个 有点绕,同过自定义一个Layer,多设个几个值,体验体验就明了了。</span><br></pre></td></tr></table></figure>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">Q:</span> Layer内部是怎么实现的呢</span><br><span class="line"><span class="symbol">A:</span> layer内部维护着三分layer tree，分别是</span><br><span class="line">presentLayer Tree(动画树)，</span><br><span class="line">modeLayer Tree(模型树),</span><br><span class="line">Render Tree(渲染树)，</span><br><span class="line">在做 iOS动画的时候，我们修改动画的属性，在动画的其实是Layer的presentLayer的属性值,</span><br><span class="line">而最终展示在界面上的其实是提供View的modelLayer。</span><br></pre></td></tr></table></figure>
+<h5 id="怎么自定义View"><a href="#怎么自定义View" class="headerlink" title="怎么自定义View"></a>怎么自定义View</h5><figure class="highlight cos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">首先得要有上下文,有了上下文才能决定把绘制的东西显示到哪个地方去.</span><br><span class="line">其次就是这个上下文必须得和<span class="keyword">View</span>相关联.才能将内容绘制到<span class="keyword">View</span>上面.</span><br><span class="line">	</span><br><span class="line">步骤:</span><br><span class="line"><span class="number">1.</span>要先自定定UIView</span><br><span class="line"><span class="number">2.</span>实现DrawRect方法</span><br><span class="line"><span class="number">3.</span>在DrawRect方法中取得跟<span class="keyword">View</span>相关联的上下文.</span><br><span class="line"><span class="number">4.</span>绘制路径(描述路径长什么样).</span><br><span class="line"><span class="number">5.</span>把描述好的路径保存到上下文(即:添加路径到上下文)</span><br><span class="line"><span class="number">6.</span>把上下文的内容渲染到<span class="keyword">View</span></span><br></pre></td></tr></table></figure>
 <p>####图形上下文的使用</p>
 <h5 id="绘制心形"><a href="#绘制心形" class="headerlink" title="绘制心形"></a>绘制心形</h5><blockquote>
 <p>示例</p>
@@ -369,7 +379,7 @@
 <h5 id="使用-Quartz2D-添加水印-裁圆角"><a href="#使用-Quartz2D-添加水印-裁圆角" class="headerlink" title="使用 Quartz2D 添加水印,裁圆角"></a>使用 Quartz2D 添加水印,裁圆角</h5><blockquote>
 <p>示例代码</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// 裁圆</span><br><span class="line">func clipCrile(image: UIImage?) -&gt; UIImage? &#123;</span><br><span class="line">    if let tempImage = image&#123;</span><br><span class="line">        UIGraphicsBeginImageContextWithOptions(tempImage.size, false, 0.0)</span><br><span class="line">        let path = UIBezierPath(ovalIn: CGRect(origin: CGPoint.init(x: 0, y: 0), size: tempImage.size))</span><br><span class="line">        path.addClip()</span><br><span class="line">        tempImage.draw(at: CGPoint.zero)</span><br><span class="line">        // 获取 到图片</span><br><span class="line">        let newImage = UIGraphicsGetImageFromCurrentImageContext()</span><br><span class="line">        // 关闭</span><br><span class="line">        UIGraphicsEndImageContext()</span><br><span class="line">        return newImage</span><br><span class="line">    &#125;</span><br><span class="line">    return nil</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 裁圆</span></span><br><span class="line">func clipCrile(image: <span class="built_in">UIImage</span>?) -&gt; <span class="built_in">UIImage</span>? &#123;</span><br><span class="line">    <span class="keyword">if</span> let tempImage = image&#123;</span><br><span class="line">        <span class="built_in">UIGraphicsBeginImageContextWithOptions</span>(tempImage.size, <span class="literal">false</span>, <span class="number">0.0</span>)</span><br><span class="line">        let path = <span class="built_in">UIBezierPath</span>(ovalIn: <span class="built_in">CGRect</span>(origin: <span class="built_in">CGPoint</span>.init(x: <span class="number">0</span>, y: <span class="number">0</span>), size: tempImage.size))</span><br><span class="line">        path.addClip()</span><br><span class="line">        tempImage.draw(at: <span class="built_in">CGPoint</span>.zero)</span><br><span class="line">        <span class="comment">// 获取 到图片</span></span><br><span class="line">        let newImage = <span class="built_in">UIGraphicsGetImageFromCurrentImageContext</span>()</span><br><span class="line">        <span class="comment">// 关闭</span></span><br><span class="line">        <span class="built_in">UIGraphicsEndImageContext</span>()</span><br><span class="line">        <span class="keyword">return</span> newImage</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="获取截屏信息"><a href="#获取截屏信息" class="headerlink" title="获取截屏信息"></a>获取截屏信息</h5><h5 id="简单的画板功能"><a href="#简单的画板功能" class="headerlink" title="简单的画板功能"></a>简单的画板功能</h5><p><a href="https://github.com/GodVampire/Quartz2D-Demo" target="_blank" rel="noopener">见Demo</a></p>
 
       
@@ -405,8 +415,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/01/19/TCP-IP/" rel="prev" title="TCP/IP">
-                TCP/IP <i class="fa fa-chevron-right"></i>
+              <a href="/2018/01/23/CoreAnimation/" rel="prev" title="Core Animation">
+                Core Animation <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -474,7 +484,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image"
-                src="/images/avatar.png"
+                src="/uploads/avatar.png"
                 alt="Vampire_时代" />
             
               <p class="site-author-name" itemprop="name">Vampire_时代</p>
@@ -488,7 +498,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -497,23 +507,12 @@
             
 
             
-              
-              
-              <div class="site-state-item site-state-tags">
-                
-                  <span class="site-state-item-count">3</span>
-                  <span class="site-state-item-name">标签</span>
-                
-              </div>
-            
 
           </nav>
 
           
 
-          <div class="links-of-author motion-element">
-            
-          </div>
+          
 
           
           
@@ -536,7 +535,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Quartz2D-概述"><span class="nav-number">1.</span> <span class="nav-text"><a href="#Quartz2D-&#x6982;&#x8FF0;" class="headerlink" title="Quartz2D &#x6982;&#x8FF0;"></a>Quartz2D &#x6982;&#x8FF0;</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Quartz2D-介绍"><span class="nav-number">1.1.</span> <span class="nav-text"><a href="#Quartz2D-&#x4ECB;&#x7ECD;" class="headerlink" title="Quartz2D &#x4ECB;&#x7ECD;"></a>Quartz2D &#x4ECB;&#x7ECD;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#图形上下文介绍"><span class="nav-number">1.2.</span> <span class="nav-text"><a href="#&#x56FE;&#x5F62;&#x4E0A;&#x4E0B;&#x6587;&#x4ECB;&#x7ECD;" class="headerlink" title="&#x56FE;&#x5F62;&#x4E0A;&#x4E0B;&#x6587;&#x4ECB;&#x7ECD;"></a>&#x56FE;&#x5F62;&#x4E0A;&#x4E0B;&#x6587;&#x4ECB;&#x7ECD;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Quartz2D的内存管理"><span class="nav-number">1.3.</span> <span class="nav-text"><a href="#Quartz2D&#x7684;&#x5185;&#x5B58;&#x7BA1;&#x7406;" class="headerlink" title="Quartz2D&#x7684;&#x5185;&#x5B58;&#x7BA1;&#x7406;"></a>Quartz2D&#x7684;&#x5185;&#x5B58;&#x7BA1;&#x7406;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#CALayer-介绍"><span class="nav-number">1.4.</span> <span class="nav-text"><a href="#CALayer-&#x4ECB;&#x7ECD;" class="headerlink" title="CALayer &#x4ECB;&#x7ECD;"></a>CALayer &#x4ECB;&#x7ECD;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#怎么自定义View"><span class="nav-number">1.5.</span> <span class="nav-text"><a href="#&#x600E;&#x4E48;&#x81EA;&#x5B9A;&#x4E49;View" class="headerlink" title="&#x600E;&#x4E48;&#x81EA;&#x5B9A;&#x4E49;View"></a>&#x600E;&#x4E48;&#x81EA;&#x5B9A;&#x4E49;View</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#绘制心形"><span class="nav-number">1.6.</span> <span class="nav-text"><a href="#&#x7ED8;&#x5236;&#x5FC3;&#x5F62;" class="headerlink" title="&#x7ED8;&#x5236;&#x5FC3;&#x5F62;"></a>&#x7ED8;&#x5236;&#x5FC3;&#x5F62;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#主要流程"><span class="nav-number">1.7.</span> <span class="nav-text"><a href="#&#x4E3B;&#x8981;&#x6D41;&#x7A0B;" class="headerlink" title="&#x4E3B;&#x8981;&#x6D41;&#x7A0B;"></a>&#x4E3B;&#x8981;&#x6D41;&#x7A0B;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用-Quartz2D绘制文字，图片"><span class="nav-number">1.8.</span> <span class="nav-text"><a href="#&#x4F7F;&#x7528;-Quartz2D&#x7ED8;&#x5236;&#x6587;&#x5B57;&#xFF0C;&#x56FE;&#x7247;" class="headerlink" title="&#x4F7F;&#x7528; Quartz2D&#x7ED8;&#x5236;&#x6587;&#x5B57;&#xFF0C;&#x56FE;&#x7247;"></a>&#x4F7F;&#x7528; Quartz2D&#x7ED8;&#x5236;&#x6587;&#x5B57;&#xFF0C;&#x56FE;&#x7247;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用-Quartz2D-添加水印-裁圆角"><span class="nav-number">1.9.</span> <span class="nav-text"><a href="#&#x4F7F;&#x7528;-Quartz2D-&#x6DFB;&#x52A0;&#x6C34;&#x5370;-&#x88C1;&#x5706;&#x89D2;" class="headerlink" title="&#x4F7F;&#x7528; Quartz2D &#x6DFB;&#x52A0;&#x6C34;&#x5370;,&#x88C1;&#x5706;&#x89D2;"></a>&#x4F7F;&#x7528; Quartz2D &#x6DFB;&#x52A0;&#x6C34;&#x5370;,&#x88C1;&#x5706;&#x89D2;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#获取截屏信息"><span class="nav-number">1.10.</span> <span class="nav-text"><a href="#&#x83B7;&#x53D6;&#x622A;&#x5C4F;&#x4FE1;&#x606F;" class="headerlink" title="&#x83B7;&#x53D6;&#x622A;&#x5C4F;&#x4FE1;&#x606F;"></a>&#x83B7;&#x53D6;&#x622A;&#x5C4F;&#x4FE1;&#x606F;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#简单的画板功能"><span class="nav-number">1.11.</span> <span class="nav-text"><a href="#&#x7B80;&#x5355;&#x7684;&#x753B;&#x677F;&#x529F;&#x80FD;" class="headerlink" title="&#x7B80;&#x5355;&#x7684;&#x753B;&#x677F;&#x529F;&#x80FD;"></a>&#x7B80;&#x5355;&#x7684;&#x753B;&#x677F;&#x529F;&#x80FD;</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Quartz2D-概述"><span class="nav-number">1.</span> <span class="nav-text">Quartz2D 概述</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Quartz2D-介绍"><span class="nav-number">1.1.</span> <span class="nav-text">Quartz2D 介绍</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#图形上下文介绍"><span class="nav-number">1.2.</span> <span class="nav-text">图形上下文介绍</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Quartz2D的内存管理"><span class="nav-number">1.3.</span> <span class="nav-text">Quartz2D的内存管理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#CALayer-介绍"><span class="nav-number">1.4.</span> <span class="nav-text">CALayer 介绍</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#怎么自定义View"><span class="nav-number">1.5.</span> <span class="nav-text">怎么自定义View</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#绘制心形"><span class="nav-number">1.6.</span> <span class="nav-text">绘制心形</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#主要流程"><span class="nav-number">1.7.</span> <span class="nav-text">主要流程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用-Quartz2D绘制文字，图片"><span class="nav-number">1.8.</span> <span class="nav-text">使用 Quartz2D绘制文字，图片</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用-Quartz2D-添加水印-裁圆角"><span class="nav-number">1.9.</span> <span class="nav-text">使用 Quartz2D 添加水印,裁圆角</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#获取截屏信息"><span class="nav-number">1.10.</span> <span class="nav-text">获取截屏信息</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#简单的画板功能"><span class="nav-number">1.11.</span> <span class="nav-text">简单的画板功能</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -574,7 +573,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
 
 
 
@@ -665,25 +664,25 @@
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
 
 
 
   
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
 
 
 

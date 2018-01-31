@@ -50,19 +50,19 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
 
 
 
@@ -83,7 +83,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Core Animation">
 <meta property="og:url" content="http://yoursite.com/2018/01/23/CoreAnimation/index.html">
-<meta property="og:site_name" content="Hello World">
+<meta property="og:site_name" content="Vampire_”时代”">
 <meta property="og:description" content="​     本文主要内容包括  核心动画介绍 基本使用方法 特殊属性分析 相关内容介绍 Core Animation 底层层级 提高性能">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/01/23/CoreAnimation/10.png">
@@ -96,7 +96,7 @@
 <meta property="og:image" content="http://yoursite.com/2018/01/23/CoreAnimation/7.png">
 <meta property="og:image" content="http://yoursite.com/2018/01/23/CoreAnimation/8.png">
 <meta property="og:image" content="http://yoursite.com/2018/01/23/CoreAnimation/9.png">
-<meta property="og:updated_time" content="2018-01-26T06:30:42.000Z">
+<meta property="og:updated_time" content="2018-01-31T05:07:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Core Animation">
 <meta name="twitter:description" content="​     本文主要内容包括  核心动画介绍 基本使用方法 特殊属性分析 相关内容介绍 Core Animation 底层层级 提高性能">
@@ -109,7 +109,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Muse',
-    version: '5.1.3',
+    version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
@@ -136,7 +136,7 @@
 
 
 
-  <title>Core Animation | Hello World</title>
+  <title>Core Animation | Vampire_”时代”</title>
   
 
 
@@ -166,7 +166,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hello World</span>
+        <span class="site-title">Vampire_”时代”</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -201,22 +201,32 @@
         </li>
       
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
           </a>
         </li>
       
@@ -258,11 +268,11 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Vampire_时代">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="image" content="/uploads/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hello World">
+      <meta itemprop="name" content="Vampire_”时代”">
     </span>
 
     
@@ -377,11 +387,11 @@
 <blockquote>
 <p>CAPropertyAnimation</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// 是一个抽象类, 没有具体的动画对象，使用CAKeyframeAnimation、CABasicAnimation</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 是一个抽象类, 没有具体的动画对象，使用CAKeyframeAnimation、CABasicAnimation</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>CATransition</p>
 </blockquote>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 过渡动画, 类似</span></span><br><span class="line"><span class="keyword">let</span> anim = <span class="type">CATransition</span>()</span><br><span class="line">anim.type = <span class="string">"push"</span> <span class="comment">// 等等其他很多效果 "pageCurl" // 翻页</span></span><br><span class="line">anim.subtype = kCATransitionFromRight <span class="comment">// 转场的方向</span></span><br><span class="line">anim.startProgress = <span class="number">0.5</span> <span class="comment">// 开始位置</span></span><br><span class="line"><span class="keyword">self</span>.layer.add(anim, forKey: <span class="literal">nil</span>) <span class="comment">// 添加动画</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 过渡动画, 类似</span></span><br><span class="line"><span class="keyword">let</span> anim = <span class="type">CATransition</span>()</span><br><span class="line">anim.type = <span class="string">"push"</span> <span class="comment">// 等等其他很多效果 "pageCurl" // 翻页</span></span><br><span class="line">anim.subtype = kCATransitionFromRight <span class="comment">// 转场的方向</span></span><br><span class="line">anim.startProgress = <span class="number">0.5</span> <span class="comment">// 开始位置</span></span><br><span class="line"><span class="keyword">self</span>.layer.add(anim, forKey: <span class="literal">nil</span>) <span class="comment">// 添加动画</span></span><br><span class="line"><span class="comment">//转场动画必须要和转场代码一起.</span></span><br><span class="line"><span class="comment">//把它们分开的话, 就没有这个转场效果了.</span></span><br></pre></td></tr></table></figure>
 <img src="/2018/01/23/CoreAnimation/4.png">
 <blockquote>
 <p>强制保留动画的最终状态</p>
@@ -430,7 +440,7 @@
 </li>
 </ul>
 <h4 id="UIView-动画"><a href="#UIView-动画" class="headerlink" title="UIView 动画"></a>UIView 动画</h4><p>​    示例代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">UIView.animate(withDuration: 0.5) &#123;</span><br><span class="line">       // 旋转 那个周有值 代表会 按照哪个轴的方向 旋转</span><br><span class="line">       // 多个值 会按照向量计算</span><br><span class="line">       self.layer.transform = CATransform3DMakeRotation( CGFloat.pi, 1, 0, 0)</span><br><span class="line">       self.layer.setValue(CGFloat.pi, forKey: &quot;transform.rotation&quot;)</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">UIView.animate(withDuration: <span class="number">0.5</span>) &#123;</span><br><span class="line">       <span class="comment">// 旋转 那个周有值 代表会 按照哪个轴的方向 旋转</span></span><br><span class="line">       <span class="comment">// 多个值 会按照向量计算</span></span><br><span class="line">       self<span class="selector-class">.layer</span><span class="selector-class">.transform</span> = CATransform3DMakeRotation( CGFloat<span class="selector-class">.pi</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">       self<span class="selector-class">.layer</span><span class="selector-class">.setValue</span>(CGFloat<span class="selector-class">.pi</span>, forKey: <span class="string">"transform.rotation"</span>)</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 <img src="/2018/01/23/CoreAnimation/7.png">
 <h4 id="使用-View-Animation-还是使用-Core-Animation"><a href="#使用-View-Animation-还是使用-Core-Animation" class="headerlink" title="使用 View Animation 还是使用 Core Animation"></a>使用 View Animation 还是使用 Core Animation</h4><p>​    还是强调一下： CoreAnimation 只是个假象,只作用在layer上</p>
 <ol>
@@ -510,8 +520,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/19/TCP-IP/" rel="next" title="TCP/IP">
-                <i class="fa fa-chevron-left"></i> TCP/IP
+              <a href="/2018/01/15/Quartz-2D/" rel="next" title="Quartz 2D">
+                <i class="fa fa-chevron-left"></i> Quartz 2D
               </a>
             
           </div>
@@ -585,7 +595,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image"
-                src="/images/avatar.png"
+                src="/uploads/avatar.png"
                 alt="Vampire_时代" />
             
               <p class="site-author-name" itemprop="name">Vampire_时代</p>
@@ -599,7 +609,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -608,23 +618,12 @@
             
 
             
-              
-              
-              <div class="site-state-item site-state-tags">
-                
-                  <span class="site-state-item-count">3</span>
-                  <span class="site-state-item-name">标签</span>
-                
-              </div>
-            
 
           </nav>
 
           
 
-          <div class="links-of-author motion-element">
-            
-          </div>
+          
 
           
           
@@ -647,7 +646,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#基础介绍"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x57FA;&#x7840;&#x4ECB;&#x7ECD;" class="headerlink" title="&#x57FA;&#x7840;&#x4ECB;&#x7ECD;"></a>&#x57FA;&#x7840;&#x4ECB;&#x7ECD;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何使用"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x5982;&#x4F55;&#x4F7F;&#x7528;" class="headerlink" title="&#x5982;&#x4F55;&#x4F7F;&#x7528;"></a>&#x5982;&#x4F55;&#x4F7F;&#x7528;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性分析"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x5C5E;&#x6027;&#x5206;&#x6790;" class="headerlink" title="&#x5C5E;&#x6027;&#x5206;&#x6790;"></a>&#x5C5E;&#x6027;&#x5206;&#x6790;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#隐式动画"><span class="nav-number">4.</span> <span class="nav-text"><a href="#&#x9690;&#x5F0F;&#x52A8;&#x753B;" class="headerlink" title="&#x9690;&#x5F0F;&#x52A8;&#x753B;"></a>&#x9690;&#x5F0F;&#x52A8;&#x753B;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CADisplayLink"><span class="nav-number">5.</span> <span class="nav-text"><a href="#CADisplayLink" class="headerlink" title="CADisplayLink"></a>CADisplayLink</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UIView-动画"><span class="nav-number">6.</span> <span class="nav-text"><a href="#UIView-&#x52A8;&#x753B;" class="headerlink" title="UIView &#x52A8;&#x753B;"></a>UIView &#x52A8;&#x753B;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用-View-Animation-还是使用-Core-Animation"><span class="nav-number">7.</span> <span class="nav-text"><a href="#&#x4F7F;&#x7528;-View-Animation-&#x8FD8;&#x662F;&#x4F7F;&#x7528;-Core-Animation" class="headerlink" title="&#x4F7F;&#x7528; View Animation &#x8FD8;&#x662F;&#x4F7F;&#x7528; Core Animation"></a>&#x4F7F;&#x7528; View Animation &#x8FD8;&#x662F;&#x4F7F;&#x7528; Core Animation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实战"><span class="nav-number">8.</span> <span class="nav-text"><a href="#&#x5B9E;&#x6218;" class="headerlink" title="&#x5B9E;&#x6218;"></a>&#x5B9E;&#x6218;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Core-Animation-底层层级"><span class="nav-number">9.</span> <span class="nav-text"><a href="#Core-Animation-&#x5E95;&#x5C42;&#x5C42;&#x7EA7;" class="headerlink" title="Core Animation &#x5E95;&#x5C42;&#x5C42;&#x7EA7;"></a>Core Animation &#x5E95;&#x5C42;&#x5C42;&#x7EA7;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提高性能"><span class="nav-number">10.</span> <span class="nav-text"><a href="#&#x63D0;&#x9AD8;&#x6027;&#x80FD;" class="headerlink" title="&#x63D0;&#x9AD8;&#x6027;&#x80FD;"></a>&#x63D0;&#x9AD8;&#x6027;&#x80FD;</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#基础介绍"><span class="nav-number">1.</span> <span class="nav-text">基础介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何使用"><span class="nav-number">2.</span> <span class="nav-text">如何使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性分析"><span class="nav-number">3.</span> <span class="nav-text">属性分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#隐式动画"><span class="nav-number">4.</span> <span class="nav-text">隐式动画</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CADisplayLink"><span class="nav-number">5.</span> <span class="nav-text">CADisplayLink</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UIView-动画"><span class="nav-number">6.</span> <span class="nav-text">UIView 动画</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用-View-Animation-还是使用-Core-Animation"><span class="nav-number">7.</span> <span class="nav-text">使用 View Animation 还是使用 Core Animation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实战"><span class="nav-number">8.</span> <span class="nav-text">实战</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Core-Animation-底层层级"><span class="nav-number">9.</span> <span class="nav-text">Core Animation 底层层级</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提高性能"><span class="nav-number">10.</span> <span class="nav-text">提高性能</span></a></li></ol></div>
             
 
           </div>
@@ -685,7 +684,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
 
 
 
@@ -776,25 +775,25 @@
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
 
 
 
   
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
 
 
 

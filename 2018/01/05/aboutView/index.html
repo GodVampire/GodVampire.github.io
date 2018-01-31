@@ -50,19 +50,19 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
 
 
 
@@ -83,7 +83,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="图形界面相关">
 <meta property="og:url" content="http://yoursite.com/2018/01/05/aboutView/index.html">
-<meta property="og:site_name" content="Hello World">
+<meta property="og:site_name" content="Vampire_”时代”">
 <meta property="og:description" content="Tip :  主要使用语言Swift       Quartz2D 概述  核心动画  本篇文章要讲述些什么   UIView 展示出来的底层运作">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/01/05/aboutView/3.jpg">
@@ -103,7 +103,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Muse',
-    version: '5.1.3',
+    version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
@@ -130,7 +130,7 @@
 
 
 
-  <title>图形界面相关 | Hello World</title>
+  <title>图形界面相关 | Vampire_”时代”</title>
   
 
 
@@ -160,7 +160,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hello World</span>
+        <span class="site-title">Vampire_”时代”</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -195,22 +195,32 @@
         </li>
       
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
           </a>
         </li>
       
@@ -252,11 +262,11 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Vampire_时代">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="image" content="/uploads/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hello World">
+      <meta itemprop="name" content="Vampire_”时代”">
     </span>
 
     
@@ -343,14 +353,14 @@
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">override</span> <span class="keyword">init</span>(frame: <span class="type">CGRect</span>) &#123;</span><br><span class="line">     <span class="keyword">super</span>.<span class="keyword">init</span>(frame: frame)</span><br><span class="line">     <span class="built_in">print</span>(#function)</span><br><span class="line">     <span class="keyword">self</span>.backgroundColor = <span class="type">UIColor</span>.brown</span><br><span class="line"> &#125;   </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">draw</span><span class="params">(<span class="number">_</span> rect: CGRect)</span></span> &#123;</span><br><span class="line">     <span class="built_in">print</span>(#function)</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">drawHierarchy</span><span class="params">(<span class="keyword">in</span> rect: CGRect, afterScreenUpdates afterUpdates: Bool)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">     <span class="built_in">print</span>(#function)</span><br><span class="line">     <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">draw</span><span class="params">(<span class="number">_</span> rect: CGRect, <span class="keyword">for</span> formatter: UIViewPrintFormatter)</span></span> &#123;</span><br><span class="line">     <span class="built_in">print</span>(#function)</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">draw</span><span class="params">(<span class="number">_</span> layer: CALayer, <span class="keyword">in</span> ctx: CGContext)</span></span> &#123;</span><br><span class="line">     <span class="built_in">print</span>(#function)</span><br><span class="line"> &#125;</span><br><span class="line"><span class="comment">//以及ViewController中的ViewwillAppear,ViewDidApper</span></span><br></pre></td></tr></table></figure>
 <p>调用结果为：</p>
 <img src="/2018/01/05/aboutView/3.jpg">
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/* If defined, called by the default implementation of -drawInContext: */</span><br><span class="line">如果定义,称为-drawInContext默认实现的:</span><br></pre></td></tr></table></figure>
+<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/* <span class="keyword">If</span> defined, called <span class="keyword">by</span> the <span class="keyword">default</span> implementation <span class="keyword">of</span> -drawInContext: */</span><br><span class="line">如果定义,称为-drawInContext默认实现的:</span><br></pre></td></tr></table></figure>
 <p>好吧,我还是解释一下 ”而我们通常会在<code>override func draw(_ rect: CGRect)</code>中绘制的一些基本图形(也是自动调用的)“这个是怎么一回事。</p>
 <p>官方文档给的是：</p>
 <img src="/2018/01/05/aboutView/4.jpg">
 <p>翻译为:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">视图绘制需要的基础上发生。视图是第一次显示时,或者当全部或部分变得可见由于布局变化,系统询问该视图画它的内容。视图包含使用UIKit定制内容或核心图形、系统调用视图的draw(_:)方法。该方法的实现负责绘制视图的内容到当前图形上下文,这是系统设置的自动调用该方法之前。这将创建一个静态视图的可视化表示的内容可以显示在屏幕上。</span><br></pre></td></tr></table></figure>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">视图绘制需要的基础上发生。视图是第一次显示时,或者当全部或部分变得可见由于布局变化,系统询问该视图画它的内容。视图包含使用<span class="selector-tag">UIKit</span>定制内容或核心图形、系统调用视图的<span class="selector-tag">draw</span>(<span class="attribute">_</span>:)方法。该方法的实现负责绘制视图的内容到当前图形上下文,这是系统设置的自动调用该方法之前。这将创建一个静态视图的可视化表示的内容可以显示在屏幕上。</span><br></pre></td></tr></table></figure>
 <p>其实我是没找到为什么会覆盖<code>func draw(_ rect: CGRect)</code>,搜索了一番:<a href="http://blog.csdn.net/tongwang123456/article/details/17881291" target="_blank" rel="noopener">原文</a>.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">当UIView需要显示时，它内部的层会准备好一个CGContextRef(图形上下文)</span><br><span class="line">然后调用delegate(这里就是UIView)的drawLayer:inContext:方法，并且传入已经准备好的CGContextRef对象。</span><br><span class="line">而UIView在drawLayer:inContext:方法中又会调用自己的drawRect:方法.</span><br><span class="line">(估计是不再实现子类的drawRect:方法了)</span><br></pre></td></tr></table></figure>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">当UIView需要显示时，它内部的层会准备好一个CGContextRef(图形上下文)</span><br><span class="line">然后调用delegate(这里就是UIView)的<span class="string">drawLayer:</span><span class="string">inContext:</span>方法，并且传入已经准备好的CGContextRef对象。</span><br><span class="line">而UIView在<span class="string">drawLayer:</span><span class="string">inContext:</span>方法中又会调用自己的<span class="string">drawRect:</span>方法.</span><br><span class="line">(估计是不再实现子类的<span class="string">drawRect:</span>方法了)</span><br></pre></td></tr></table></figure>
 <p>言归正传,那么先观察一下接下来需要的<code>override func draw(_ rect: CGRect)</code>的方法调用顺序</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">override</span> <span class="keyword">init</span>(frame: <span class="type">CGRect</span>) &#123;</span><br><span class="line">     <span class="keyword">super</span>.<span class="keyword">init</span>(frame: frame)</span><br><span class="line">     <span class="built_in">print</span>(#function)</span><br><span class="line">     <span class="keyword">self</span>.backgroundColor = <span class="type">UIColor</span>.brown</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">draw</span><span class="params">(<span class="number">_</span> rect: CGRect)</span></span> &#123;</span><br><span class="line">     <span class="built_in">print</span>(#function)</span><br><span class="line"> &#125;</span><br><span class="line"><span class="comment">//以及ViewController中的ViewwillAppear,ViewDidApper</span></span><br></pre></td></tr></table></figure>
 <p>结果是：</p>
@@ -474,7 +484,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image"
-                src="/images/avatar.png"
+                src="/uploads/avatar.png"
                 alt="Vampire_时代" />
             
               <p class="site-author-name" itemprop="name">Vampire_时代</p>
@@ -488,7 +498,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -497,23 +507,12 @@
             
 
             
-              
-              
-              <div class="site-state-item site-state-tags">
-                
-                  <span class="site-state-item-count">3</span>
-                  <span class="site-state-item-name">标签</span>
-                
-              </div>
-            
 
           </nav>
 
           
 
-          <div class="links-of-author motion-element">
-            
-          </div>
+          
 
           
           
@@ -536,7 +535,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#图形绘制是怎么回事"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x56FE;&#x5F62;&#x7ED8;&#x5236;&#x662F;&#x600E;&#x4E48;&#x56DE;&#x4E8B;" class="headerlink" title="&#x56FE;&#x5F62;&#x7ED8;&#x5236;&#x662F;&#x600E;&#x4E48;&#x56DE;&#x4E8B;"></a>&#x56FE;&#x5F62;&#x7ED8;&#x5236;&#x662F;&#x600E;&#x4E48;&#x56DE;&#x4E8B;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结尾"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x7ED3;&#x5C3E;" class="headerlink" title="&#x7ED3;&#x5C3E;"></a>&#x7ED3;&#x5C3E;</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#图形绘制是怎么回事"><span class="nav-number">1.</span> <span class="nav-text">图形绘制是怎么回事</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结尾"><span class="nav-number">2.</span> <span class="nav-text">结尾</span></a></li></ol></div>
             
 
           </div>
@@ -574,7 +573,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
 
 
 
@@ -665,25 +664,25 @@
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
 
 
 
   
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
 
 
 
