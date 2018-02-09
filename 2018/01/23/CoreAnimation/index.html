@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="动画,Core Animation," />
+  <meta name="keywords" content="Core Animation,动画," />
 
 
 
@@ -79,13 +79,13 @@
 
 
 
-<meta name="description" content="​     本文主要内容包括  核心动画介绍 基本使用方法 特殊属性分析 相关内容介绍 Core Animation 底层层级 提高性能">
-<meta name="keywords" content="动画,Core Animation">
+<meta name="description" content="​     本文主要内容包括  核心动画介绍 基本使用方法 特殊属性分析 相关内容介绍 Core Animation 底层层级 如何提高展示提高性能">
+<meta name="keywords" content="Core Animation,动画">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Core Animation">
 <meta property="og:url" content="http://yoursite.com/2018/01/23/CoreAnimation/index.html">
 <meta property="og:site_name" content="Vampire_”时代”">
-<meta property="og:description" content="​     本文主要内容包括  核心动画介绍 基本使用方法 特殊属性分析 相关内容介绍 Core Animation 底层层级 提高性能">
+<meta property="og:description" content="​     本文主要内容包括  核心动画介绍 基本使用方法 特殊属性分析 相关内容介绍 Core Animation 底层层级 如何提高展示提高性能">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/01/23/CoreAnimation/10.png">
 <meta property="og:image" content="http://yoursite.com/2018/01/23/CoreAnimation/1.png">
@@ -97,10 +97,10 @@
 <meta property="og:image" content="http://yoursite.com/2018/01/23/CoreAnimation/7.png">
 <meta property="og:image" content="http://yoursite.com/2018/01/23/CoreAnimation/8.png">
 <meta property="og:image" content="http://yoursite.com/2018/01/23/CoreAnimation/9.png">
-<meta property="og:updated_time" content="2018-01-31T07:48:59.000Z">
+<meta property="og:updated_time" content="2018-02-06T02:57:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Core Animation">
-<meta name="twitter:description" content="​     本文主要内容包括  核心动画介绍 基本使用方法 特殊属性分析 相关内容介绍 Core Animation 底层层级 提高性能">
+<meta name="twitter:description" content="​     本文主要内容包括  核心动画介绍 基本使用方法 特殊属性分析 相关内容介绍 Core Animation 底层层级 如何提高展示提高性能">
 <meta name="twitter:image" content="http://yoursite.com/2018/01/23/CoreAnimation/10.png">
 
 
@@ -361,18 +361,19 @@
 <p>特殊属性分析</p>
 <p>相关内容介绍</p>
 <p>Core Animation 底层层级</p>
-<p>提高性能</p>
+<p>如何提高展示提高性能</p>
 </blockquote>
 <a id="more"></a>
 <p>​    </p>
 <p>​    当你抱着你媳妇儿的时候，磕着瓜子，躺在床上，看着影屏，不禁感叹科技的进步，接下来我们去了解一下Core Animation，是不是没什么联系（就要强行插入 2333</p>
+<p>​        乔大大WWDC上介绍CoreAnimation图~在前今年这个技术还是蛮厉害的…</p>
 <img src="/2018/01/23/CoreAnimation/10.png">
 <blockquote class="blockquote-center"><p>Think diffrent</p>
 <p>Jobs</p>
 </blockquote>
 <p>好吧，开始正题</p>
 <h4 id="基础介绍"><a href="#基础介绍" class="headerlink" title="基础介绍"></a>基础介绍</h4><p>Q ：核心动画是做什么的？</p>
-<p>A ： 核心动画提供了一个通用的系统动画视图和其他视觉元素的应用程序，为应用的视图和可视对象设置动画效果。大部分更改与修改视觉对象的属性有关，将任意图形转换应用于视图或更改视图的其他视觉属性。</p>
+<p>A ： 官方一点de话，核心动画提供了一个通用的系统动画视图和其他视觉元素的应用程序，为应用的视图和可视对象设置动画效果。大部分更改与修改视觉对象的属性有关，将任意图形转换应用于视图或更改视图的其他视觉属性。</p>
 <p>​    通俗一点也就是一些动画效果，一种形式，不影响原来的内容（也可以改变原有的视觉状态，但是Frame位置等不会变化）</p>
 <p>特点：</p>
 <ul>
@@ -380,13 +381,13 @@
 <li>Core Animation的动画执行过程都是在后台操作的，不会阻塞主线程。</li>
 <li>Core Animation是直接作用在CALayer上的，并非UIView。</li>
 </ul>
-<p>结构图如下：</p>
+<p>在底层运作原理上，结构图如下所示，其实还是隐藏在UIKit下面工作的：</p>
 <img src="/2018/01/23/CoreAnimation/1.png">
 <p>Q  ：如何绘制内容？</p>
-<p>A   :  当更改触发动画时，Core Animation将图层的位图和状态信息传递给图形硬件，图形硬件完成了使用新信息渲染位图的工作，如图1-1所示。在硬件中操作位图产生比在软件中更快的动画。</p>
+<p>A   :  当更改触发动画时，Core Animation将图层的位图和状态信息传递给图形硬件，图形硬件完成了使用新信息渲染位图的工作，如图下图所示。</p>
 <p>​    绘制过程图：</p>
 <img src="/2018/01/23/CoreAnimation/2.png">
-<p>​    由于它操纵静态位图，因此基于图层的绘图与传统的基于视图的绘图技术有很大不同。使用基于视图的绘图时，对视图本身的更改通常会导致调用视图的<code>drawRect:</code>方法来使用新参数重绘内容。但是用这种方式绘制是昂贵的，因为它使用主线程上的CPU来完成。核心动画通过在硬件中操作缓存的位图来实现相同或类似的效果，从而尽可能地避免了这种花费。</p>
+<p>​    由于它操纵静态位图，因此基于图层的绘图与传统的基于视图的绘图技术有很大不同。使用基于视图的绘图时，大多数做法是更改或者调用视图的<code>drawRect:</code>方法来重绘内容，也就是Quartz 2D的常用做法。但是用这种方式绘制会浪费很多资源，因为它在主线程上的CPU来工作的。核心动画通过在硬件中操作缓存的位图来实现相同或类似的效果，从而尽可能地避免了这种主线程的开销。而且在硬件中操作位图可以产生比在软件中(drawRect中)更快的动画。</p>
 <h4 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h4><blockquote>
 <p>继承结构图</p>
 </blockquote>
@@ -423,19 +424,22 @@
 <h4 id="属性分析"><a href="#属性分析" class="headerlink" title="属性分析"></a>属性分析</h4><blockquote>
 <p>Mask  Layer</p>
 </blockquote>
-<p>​    设置圆角的时候经常用到</p>
+<p>​    我们设置圆角的时候经常用到</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">self</span>.layer.cornerRadius = <span class="number">10</span></span><br><span class="line"><span class="keyword">self</span>.layer.masksToBounds = <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<p>​    那么观察一下 <code>self.layer.mask</code>  返回的Layer</p>
+<p>那么会是以怎么一个方式来达到切去边角的效果呢，cornerRadius是角度，应该是个依赖数据，masksToBounds效果应该是切除超出范围的视图，那是不是跟mask有关呢？</p>
+<p>那么观察一下 <code>self.layer.mask</code> 到底是怎么个属性，它返回的是一个Layer</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">open</span> <span class="keyword">var</span> mask: <span class="type">CALayer</span>?</span><br></pre></td></tr></table></figure>
-<p>​    <strong>mask图层定义了父图层的部分可见区域。</strong>mask真正厉害的地方在于蒙版图层不局限于静态图。任何有图层构成的都可以作为mask属性，这意味着你的蒙版可以通过代码甚至是动画实时生成！<br>​    效果如下：</p>
+<p>google一下别人的解释：    </p>
+<p><strong>mask图层定义了父图层的部分可见区域。</strong>mask真正厉害的地方在于蒙版图层不局限于静态图。任何有图层构成的都可以作为mask属性，这意味着你的蒙版可以通过代码甚至是动画实时生成！<br>​    效果如下：</p>
 <img src="/2018/01/23/CoreAnimation/5.png">
-<p>​    也就是这样色儿的：  </p>
+<p>​    运作源原理也就是这样色儿的：  </p>
 <img src="/2018/01/23/CoreAnimation/6.png">
 <blockquote>
-<p>contents</p>
+<p> 接下来我们去看看如何自定义一个Layer</p>
 </blockquote>
 <p>​    自定义Layer 示例代码：</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> lay = <span class="type">CALayer</span>()</span><br><span class="line">lay.frame = <span class="keyword">self</span>.bounds</span><br><span class="line"><span class="keyword">self</span>.layer.addSublayer(lay)</span><br><span class="line">lay.contents = <span class="type">UIImage</span>.<span class="keyword">init</span>(named: <span class="string">"xxx"</span>)?.cgImage <span class="comment">// 需要 cgImage 类似 cgCorlor</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> lay = <span class="type">CALayer</span>()</span><br><span class="line">lay.frame = <span class="keyword">self</span>.bounds</span><br><span class="line"><span class="keyword">self</span>.layer.addSublayer(lay)</span><br><span class="line">   <span class="comment">//设置layer的内容</span></span><br><span class="line">lay.contents = <span class="type">UIImage</span>.<span class="keyword">init</span>(named: <span class="string">"xxx"</span>)?.cgImage <span class="comment">// 需要 cgImage 类似 cgCorlor</span></span><br></pre></td></tr></table></figure>
+<p>这里提一下 cg 开头的一些属性</p>
 <blockquote>
 <p>cgCorlor cgImage</p>
 </blockquote>
@@ -493,7 +497,8 @@
 <p>Tip </p>
 </blockquote>
 <p>​     只有在动画正在执行时，才能访问presentation tree 中的对象。在动画进行过程中，presentation tree 包含当前在屏幕上出现的图层的状态值，即进行中的状态值。但是这个值和layer tree中的不同，layer tree总是反映代码设置的最后一个值，并等同于动画的最终状态。</p>
-<h4 id="提高性能"><a href="#提高性能" class="headerlink" title="提高性能"></a>提高性能</h4><p>有几种方法可以使您的图层实现更高效。然而，与任何这样的优化一样，在尝试优化之前，您应该始终测量代码的当前性能。这为您提供了一个可用于确定优化是否正常工作的基线。</p>
+<h4 id="提高性能"><a href="#提高性能" class="headerlink" title="提高性能"></a>提高性能</h4><p>都是官方解释了~~~ </p>
+<p>有几种方法可以使您的图层实现更高效。然而，与任何这样的优化一样，在尝试优化之前，您应该始终测量代码的当前性能。这为您提供了一个可用于确定优化是否正常工作的基线。</p>
 <blockquote>
 <p>尽可能使用不透明层</p>
 </blockquote>
@@ -536,9 +541,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/动画/" rel="tag"># 动画</a>
-          
             <a href="/tags/Core-Animation/" rel="tag"># Core Animation</a>
+          
+            <a href="/tags/动画/" rel="tag"># 动画</a>
           
         </div>
       
@@ -560,6 +565,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/02/gameMyself/" rel="prev" title="自己究竟是个什么样子的人">
+                自己究竟是个什么样子的人 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -640,7 +649,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -651,7 +660,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -662,7 +671,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

@@ -96,7 +96,8 @@
 <meta property="og:image" content="http://yoursite.com/2018/01/19/TCP-IP/picture7.png">
 <meta property="og:image" content="http://yoursite.com/2018/01/19/TCP-IP/picture8.png">
 <meta property="og:image" content="http://yoursite.com/2018/01/19/TCP-IP/picture9.png">
-<meta property="og:updated_time" content="2018-01-31T07:46:55.000Z">
+<meta property="og:image" content="http://yoursite.com/2018/01/19/TCP-IP/picture10.png">
+<meta property="og:updated_time" content="2018-02-06T03:01:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TCP&#x2F;IP">
 <meta name="twitter:description" content="写在前面  ​    对于这些内容也是第一次整理，对很多知识也是一知半解，链接很多，搬用的也不少，错误的地方应该也有，表述不清楚的~凑合着过吧。  本篇主要讲述   Tcp/IP模型 和 OSI模型 思考网络协议的运作方式 实践抓包 TCP/IP 协议如何处理数据通信 各层的 Header 分析 理解TCP/IP各层 Http 和Https、IPv4 和IPv6、TCP 和UDP 加密">
@@ -372,7 +373,7 @@
 <a id="more"></a>
 <h4 id="热身"><a href="#热身" class="headerlink" title="热身"></a>热身</h4><p>​    还是采用QA的形势吧,自问自答,让内容一目了然</p>
 <p>Q: 为什么要来了解计算机网络知识，了解这些做什么?？</p>
-<p>A:     1. <a href="https://www.zhihu.com/question/51074319" target="_blank" rel="noopener">一篇讲Tcp/Ip</a>的回答很好，先从汽车行业说起,99%的人可能只会开车，不会修理汽车，也不了解汽车内部构造，但是不影响使用汽车。但是对于汽车维修工程师，需要精通汽车内部结构。同理计算机也是如此，作为一名经常和计算机打交道的编程人员，当遇到网络问题，或者需要抓包等情况，还是需要有一定的知识储备的。</p>
+<p>A:     1. <a href="https://www.zhihu.com/question/51074319" target="_blank" rel="noopener">一篇讲Tcp/Ip</a>的开头描述的很有意思，说先从汽车行业说起,99%的人可能只会开车，不会修理汽车，也不了解汽车内部构造，但是不影响使用汽车。但是对于汽车维修工程师，需要精通汽车内部结构。同理计算机也是如此，作为一名经常和计算机打交道的编程人员，当遇到网络问题，或者需要抓包等情况，还是需要有一定的知识储备的。emm~ 很到位。</p>
 <p>​    2.那么了解这些主要是为了：方便以后的使用，探知网络体系构造，也增强一下自己的学习能力，而且这些对于编程开发知道这些也是只少不多。</p>
 <p>Q: 如果之前有学习过，为什么认知不深?<br>A:     1.可能只是平时在使用Http,或者了解Tcp/Ip,Scoket,DNS,IP等等关键字,但是却始终觉得有点混淆。<br>      2.可能是缺乏基础知识(我的也很差2333),或者是只看网络互联的局部细节,没有整体的概念,就容易理解不到位。<br>​     3.或者是知道的概念很多,却不知道他们运用于什么地方,不知道如何生效的。<br>   所以,这次不在选择走马观花,动手对整体把握一下,实践起来。</p>
 <p>Q: 那么多知识内容,怎样去学习?<br>A:      还是从汽车维修来说，<strong>如果只是看汽车的维修手册，即使看千遍也不一定会维修汽车。</strong>那么想熟练的地维修，采用这样的模式：<strong>动手 + 理论 + 师傅指导</strong>  ,动手去亲自抓一抓包，或者写一个小程序，分析一下网络请求中到底经历了什么？</p>
@@ -464,10 +465,13 @@
 </li>
 <li><p>常用的请求头</p>
 <img src="/2018/01/19/TCP-IP/picture8.png">
-<p>​这里只列举了部分，还是给到<a href="https://en.wikipedia.org/wiki/List_of_HTTP_header_fields" target="_blank" rel="noopener">更多详情</a></p>
+<p>这里只列举了部分，还是给到<a href="https://en.wikipedia.org/wiki/List_of_HTTP_header_fields" target="_blank" rel="noopener">更多详情</a></p>
 </li>
 <li><p>再来一张场景图</p>
 <img src="/2018/01/19/TCP-IP/picture9.png">
+</li>
+<li><p>对应图</p>
+<img src="/2018/01/19/TCP-IP/picture10.png">
 </li>
 </ul>
 <blockquote>
@@ -689,7 +693,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -700,7 +704,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -711,7 +715,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
